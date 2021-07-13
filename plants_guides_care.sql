@@ -1,3 +1,14 @@
+-- Care Table
+CREATE TABLE Care (
+careID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+water varchar(255) NOT NULL,
+light time NOT NULL,
+temperature int NOT NULL,
+humidity varchar(255),
+fertilizer varchar(255),
+soil varchar(255)
+);
+
 -- Plants Table
 CREATE TABLE Plants (
 plantID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -25,13 +36,3 @@ FOREIGN KEY (plantID) REFERENCES Plants(plantID),
 FOREIGN KEY (userID) REFERENCES Users(userID)
 );
 
--- Care Table
-CREATE TABLE Care (
-careID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-water varchar(255) NOT NULL,
-light time NOT NULL,
-temperature int NOT NULL,
-humidity varchar(255),
-fertilizer varchar(255),
-soil varchar(255)
-);
