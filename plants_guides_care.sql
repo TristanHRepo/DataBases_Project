@@ -28,7 +28,7 @@ FOREIGN KEY (userID) REFERENCES Users(userID)
 -- Care Table
 CREATE TABLE Care (
 careID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-water int NOT NULL,
+water varchar(255) NOT NULL,
 light time NOT NULL,
 temperature int NOT NULL,
 humidity varchar(255),
