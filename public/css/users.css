@@ -1,0 +1,26 @@
+.options {
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    height: 200px;
+}
+
+.userContainer {
+    display: flex;
+
+}
+
+.details {
+    flex: 50%;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    height: 200px;
+}
+
+.content {
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    height: 200px;
+}
