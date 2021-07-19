@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76d90841-730d-4af6-bd19-72f7fc3502e0" name="Default Changelist" comment="" />
+    <list default="true" id="76d90841-730d-4af6-bd19-72f7fc3502e0" name="Default Changelist" comment="Added index.html, along with a public folder containing sub directories for html and css files.">
+      <change afterPath="$PROJECT_DIR$/public/css/register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/userLogin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/users.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/html/guides.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/html/registerUser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/html/users.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/html/usersLogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -28,6 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Emily Website" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -38,7 +50,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626726826399</updated>
-      <workItem from="1626726828157" duration="1106000" />
+      <workItem from="1626726828157" duration="3986000" />
     </task>
     <task id="LOCAL-00001" summary="Added index.html, along with a public folder containing sub directories for html and css files.">
       <created>1626727921149</created>
