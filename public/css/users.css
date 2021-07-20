@@ -1,4 +1,5 @@
 .options {
+    padding-top: 10px;
     text-align: center;
     border-color: black;
     border-style: solid;
@@ -12,6 +13,15 @@
 
 .details {
     flex: 50%;
+    padding-top: 10px;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    height: 200px;
+}
+
+.plants {
+    padding-top: 10px;
     text-align: center;
     border-color: black;
     border-style: solid;
@@ -19,6 +29,7 @@
 }
 
 .content {
+    padding-top: 10px;
     text-align: center;
     border-color: black;
     border-style: solid;

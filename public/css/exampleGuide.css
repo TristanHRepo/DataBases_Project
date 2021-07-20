@@ -1,0 +1,23 @@
+.titleDisplay {
+    border-color: black;
+    border-style: solid;
+    align-content: center;
+    text-align: center;
+}
+
+.videoDisplay {
+    border-color: black;
+    border-style: solid;
+    align-content: center;
+    text-align: center;
+    height: 200px;
+}
+
+.descriptionDisplay {
+    border-color: black;
+    border-style: solid;
+    align-content: center;
+    text-align: center;
+    height: 400px;
+    padding-top: 30px;
+}
