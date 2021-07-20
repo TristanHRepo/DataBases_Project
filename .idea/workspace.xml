@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76d90841-730d-4af6-bd19-72f7fc3502e0" name="Default Changelist" comment="Added index.html, along with a public folder containing sub directories for html and css files.">
-      <change afterPath="$PROJECT_DIR$/public/css/createGuide.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/exampleGuide.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/guides.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/html/createGuide.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/html/exampleGuide.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html/guides.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/html/guides.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/html/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/guides.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/guides.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html/experts.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/html/experts.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +44,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1626726826399</updated>
-      <workItem from="1626726828157" duration="10561000" />
+      <workItem from="1626726828157" duration="11705000" />
+      <workItem from="1626743909200" duration="316000" />
     </task>
     <task id="LOCAL-00001" summary="Added index.html, along with a public folder containing sub directories for html and css files.">
       <created>1626727921149</created>
