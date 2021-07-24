@@ -169,15 +169,15 @@ VALUES ("Superior Mastermind of Plants", "There can only be one.");
 
 -- Pepper Ridge expert in palms
 INSERT INTO UserExpert (userID, expertID)
-VALUES (2, 4)
+VALUES (2, 4);
 
 -- Pepper Ridge expert in Succulents
 INSERT INTO UserExpert (userID, expertID)
-VALUES (2, 1)
+VALUES (2, 1);
 
 -- Lenny Pepperbottom expert in Superior Mastermind of Plants
 INSERT INTO UserExpert (userID, expertID)
-VALUES (4, 5)
+VALUES (4, 5);
 
 
 
@@ -185,17 +185,17 @@ VALUES (4, 5)
 
 
 -- Pepper Ridge owns Pony Tail Palm
-INSERT INTO UserExpert (userID, plantID)
-VALUES (2, 13)
+INSERT INTO PlantsOwned (userID, plantID)
+VALUES (2, 13);
 
 -- Pepper Ridge owns Black Rose Aeonium
-INSERT INTO UserExpert (userID, plantID)
-VALUES (2, 12)
+INSERT INTO PlantsOwned (userID, plantID)
+VALUES (2, 12);
 
 -- Pepper Ridge owns Jade
-INSERT INTO UserExpert (userID, plantID)
-VALUES (2, 3)
+INSERT INTO PlantsOwned (userID, plantID)
+VALUES (2, 3);
 
 -- Lenny Pepperbottom owns Money Tree
-INSERT INTO UserExpert (userID, plantID)
-VALUES (4, 15)
+INSERT INTO PlantsOwned (userID, plantID)
+VALUES (4, 15);
