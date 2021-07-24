@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="static/css/plantStyle.css">
+{% endblock styling %}
+{% block content %}
+
+<div class="About">
+    <div class="text">
+        <h2>Browse Plants</h2>
+        <p>This is an area where users will browse exsiting plants (READ) and add new plants if they do not see one that they own (CREATE).</p> 
+        <p>Users can click on a plant entry to view (READ) the care requirements for that plant.</p> 
+    </div>
+</div>
+
+<div class="specificPlant">
+    <p> This area is reserved for plant entries. Clicking on a plant entry will link to its care requirements</p> 
+    <button onclick="location.href='care'" type="button">
+        view care requirements
+    </button>
+</div>
+
+<div class="addPlant">
+    <form>
+        <p>Don't see a plant you have? Add it here!</p>
+        <label for="commonName">Common Name (Required):</label><br>
+        <input type="text" id="commonName" name="commonName"><br>
+        <label for="scienceName">Scientific Name:</label><br>
+        <input type="text" id="scienceName" name="scienceName"><br>
+        <label for="type">Type:</label><br>
+        <input type="text" id="type" name="type"><br>
+        <label for="variegated">Variegated (Yes/No):</label><br>
+        <input type="text" id="variegated" name="variegated"><br>
+        <label for="petSafe">Pet Safe (Yes/No):</label><br>
+        <input type="text" id="petSafe" name="petSafe"><br>
+        <label for="maxSize">Max Size:</label><br>
+        <input type="text" id="maxSize" name="maxSize"><br>
+        
+        <br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock content %}

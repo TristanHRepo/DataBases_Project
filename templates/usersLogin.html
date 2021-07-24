@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Plant Parenting</title>
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/userLogin.css">
-</head>
-<body>
-<div class="Banner">
-    <h1>Login Page</h1>
-</div>
-
-<div class="Heading">
-    <ul id="navBar">
-        <li class="navBarElement"><a href="../../index.html">Home</a></li>
-        <li class="navBarElement"><a href="plants.html">Plants</a></li>
-        <li class="navBarElement"><a href="guides.html">Guides</a></li>
-        <li class="navBarElement"><a href="usersLogin.html">User</a></li>
-        <li class="navBarElement"><a href="experts.html">For Experts</a></li>
-    </ul>
-</div>
+{% extends "layout.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="static/css/userLogin.css">
+{% endblock styling %}
+{% block content %}
 
 <div class="loginContainer">
     <h2>Login!</h2>
@@ -38,10 +21,10 @@
 </div>
 
 <div class="registerContainer">
-    <button onclick="location.href='registerUser.html'" type="button">
+    <button onclick="location.href='users'" type="button">
         register!
     </button>
-    <button onclick="location.href='users.html'" type="button">
+    <button onclick="location.href='register'" type="button">
         logged in
     </button>
 
@@ -52,5 +35,4 @@
     </p>
 </div>
 
-</body>
-</html>
+{% endblock content %}

@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Plant Parenting</title>
-    <link rel="stylesheet" href="public/css/navbar.css">
-</head>
-<body>
-<div class="Banner">
-    <h1>Home Page</h1>
-</div>
-
-<div class="Heading">
-    <ul id="navBar">
-        <li class="navBarElement"><a href="index.html">Home</a></li>
-        <li class="navBarElement"><a href="public/html/plants.html">Plants</a></li>
-        <li class="navBarElement"><a href="public/html/guides.html">Guides</a></li>
-        <li class="navBarElement"><a href="public/html/usersLogin.html">User</a></li>
-        <li class="navBarElement"><a href="public/html/experts.html">For Experts</a></li>
-    </ul>
-</div>
+{% extends "layout.html" %}
+{% block content %}
 
 <div class="About">
     <div class="text">
@@ -40,5 +21,5 @@
         <p>We hope you find this app as a useful tool in your plant care.</p>
     </div>
 </div>
-</body>
-</html>
+
+{% endblock content %}

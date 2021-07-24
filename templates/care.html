@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="static/css/careStyle.css">
+{% endblock styling %}
+{% block content %}
+
+<div class="About">
+    <div class="text">
+        <h2>Care Requirements</h2>
+        <p>This page is where users will view (READ) the care requirements for the plant entry they clicked on. If one of their plants needs custom care they can fill out a form to insert (CREATE) their own custom care requirements for their plant.</p> 
+    </div>
+</div>
+
+<div class="customCare">
+    <form>
+        <p>Add custom care for your plant here!</p>
+        <label for="water">Water (Required):</label><br>
+        <input type="text" id="water" name="water"><br>
+        <label for="light">Light (Required):</label><br>
+        <input type="text" id="light" name="light"><br>
+        <label for="temperature">Temperature (Required):</label><br>
+        <input type="text" id="temperature" name="temperature"><br>
+        <label for="humidity">Humidity:</label><br>
+        <input type="text" id="humidity" name="humidity"><br>
+        <label for="fertilizer">Fertilizer:</label><br>
+        <input type="text" id="fertilizer" name="fertilizer"><br>
+        <label for="soil">Soil:</label><br>
+        <input type="text" id="soil" name="soil"><br>
+        
+        <br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock content%}

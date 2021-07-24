@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Plant Parenting</title>
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/register.css">
-</head>
-<body>
-<div class="Banner">
-    <h1>Register Page</h1>
-</div>
-
-<div class="Heading">
-    <ul id="navBar">
-        <li class="navBarElement"><a href="../../index.html">Home</a></li>
-        <li class="navBarElement"><a href="plants.html">Plants</a></li>
-        <li class="navBarElement"><a href="guides.html">Guides</a></li>
-        <li class="navBarElement"><a href="usersLogin.html">User</a></li>
-        <li class="navBarElement"><a href="experts.html">For Experts</a></li>
-    </ul>
-</div>
+{% extends "layout.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="static/css/register.css">
+{% endblock styling %}
+{% block content %}
 
 <div class="registerContainer">
 
@@ -44,5 +27,4 @@
 
 </div>
 
-</body>
-</html>
+{% endblock content %}

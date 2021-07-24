@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="static/css/guides.css">
+{% endblock styling %}
+{% block content %}
+<div class="createGuide">
+    <button onclick="location.href='guides/create'" type="button">
+        Create!
+    </button>
+    <p>This area will be for items associated with styling and for the create button, which will redirect a registered
+    user to the create guide page.</p>
+</div>
+
+<div class="guidesList">
+    <button onclick="location.href='guides/example'" type="button">
+        Example Guide Page
+    </button>
+    <p>
+        This page will contain the list of guides from the database. This area here is reserved for displaying the
+        guides to the user The guides will be sorted based on what the user decides in a list format. This will select
+        the guides titles and other relevant information from the database. (READ)
+    </p>
+</div>
+{% endblock content %}

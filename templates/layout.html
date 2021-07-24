@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Parenting</title>
+    <link rel="stylesheet" href="/static/css/navbar.css">
+    {% block styling %}{% endblock %}
+
+</head>
+<body>
+<div class="Banner">
+    <h1>Home Page</h1>
+</div>
+
+<div class="Heading">
+    <ul id="navBar">
+        <li class="navBarElement"><a href="/">Home</a></li>
+        <li class="navBarElement"><a href="/plants">Plants</a></li>
+        <li class="navBarElement"><a href="/guides">Guides</a></li>
+        <li class="navBarElement"><a href="/login">User</a></li>
+        <li class="navBarElement"><a href="/experts">For Experts</a></li>
+    </ul>
+</div>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

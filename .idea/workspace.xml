@@ -2,9 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76d90841-730d-4af6-bd19-72f7fc3502e0" name="Default Changelist" comment="Added index.html, along with a public folder containing sub directories for html and css files.">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DataBases_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DataBases_Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/guides.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/guides.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html/experts.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/html/experts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/careStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/careStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/createGuide.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/createGuide.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/exampleGuide.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/exampleGuide.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/expertsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/expertsStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/guides.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/guides.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/plantStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/plantStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/userLogin.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/userLogin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/users.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/users.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html/care.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/care.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html/createGuide.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/createGuide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html/exampleGuide.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exampleGuide.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html/experts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/experts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html/guides.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/guides.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html/plants.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/plants.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html/registerUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registerUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html/usersLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usersLogin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +37,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -32,9 +56,42 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Emily Website" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bsdtr\Documents\GitHub\DataBases_Project\templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DataBases_Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -45,7 +102,8 @@
       <option name="presentableId" value="Default" />
       <updated>1626726826399</updated>
       <workItem from="1626726828157" duration="11705000" />
-      <workItem from="1626743909200" duration="316000" />
+      <workItem from="1626743909200" duration="436000" />
+      <workItem from="1627151157027" duration="382000" />
     </task>
     <task id="LOCAL-00001" summary="Added index.html, along with a public folder containing sub directories for html and css files.">
       <created>1626727921149</created>
@@ -59,6 +117,21 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added index.html, along with a public folder containing sub directories for html and css files." />

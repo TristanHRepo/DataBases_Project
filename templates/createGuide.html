@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Plant Parenting</title>
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/createGuide.css">
-</head>
-<body>
-<div class="Banner">
-    <h1>Create Guide Page</h1>
-</div>
-
-<div class="Heading">
-    <ul id="navBar">
-        <li class="navBarElement"><a href="../../index.html">Home</a></li>
-        <li class="navBarElement"><a href="plants.html">Plants</a></li>
-        <li class="navBarElement"><a href="guides.html">Guides</a></li>
-        <li class="navBarElement"><a href="usersLogin.html">User</a></li>
-        <li class="navBarElement"><a href="experts.html">For Experts</a></li>
-    </ul>
-</div>
+{% extends "layout.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="../static/css/createGuide.css">
+{% endblock styling %}
+{% block content %}
 
 <div class="createContainer">
 
@@ -41,6 +24,6 @@
         This is where a user will create a guide. A title and description is all that is required to create a guide.
         This form will be submitted to the server and added to the database. (CREATE)
     </p>
+</div>
 
-</body>
-</html>
+{% endblock content %}
