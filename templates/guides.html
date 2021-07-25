@@ -15,10 +15,27 @@
     <button onclick="location.href='guides/example'" type="button">
         Example Guide Page
     </button>
-    <p>
-        This page will contain the list of guides from the database. This area here is reserved for displaying the
-        guides to the user The guides will be sorted based on what the user decides in a list format. This will select
-        the guides titles and other relevant information from the database. (READ)
-    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Guide ID</th>
+                <th>Title</th>
+                <th>Video Link</th>
+                <th>Description</th>
+                <th>Plant ID</th>
+                <th>User ID</th>
+            </tr>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+                <td>{{item[2]}}</td>
+                <td>{{item[3]}}</td>
+                <td>{{item[4]}}</td>
+                <td>{{item[5]}}</td>
+            </tr>
+            {% endfor %}
+    </table>
 </div>
 {% endblock content %}

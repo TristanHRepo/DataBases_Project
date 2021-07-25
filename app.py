@@ -1,10 +1,21 @@
-from flask import Flask, render_template, json, url_for
+from flask import Flask, render_template, json
 import os
+from flaskext.mysql import MySQL
+from dotenv import load_dotenv, find_dotenv
+
+
+load_dotenv(find_dotenv())
 
 app = Flask(__name__)
+mysql = MySQL()
+app.config['MYSQL_DATABASE_USER'] = os.environ.get("340DBUSER")
+app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get("340DBPW")
+app.config['MYSQL_DATABASE_DB'] = os.environ.get("340DB")
+app.config['MYSQL_DATABASE_HOST'] = os.environ.get("340DBHOST")
+mysql.init_app(app)
 
-
-# Routes
+conn = mysql.connect()
+cursor =conn.cursor()
 
 @app.route('/')
 def root():
@@ -20,7 +31,11 @@ def care():
 
 @app.route('/guides')
 def guides():
-    return render_template('guides.html')
+    cursor.execute("SELECT * FROM `Guides`")
+    guide_data = cursor.fetchall()
+    print(guide_data)
+
+    return render_template('guides.html', data=guide_data)
 
 @app.route('/guides/create')
 def create_guide():
