@@ -1,3 +1,8 @@
+-- Query for add a new character functionality with colon : character being used to 
+-- denote the variables that will have data from the backend programming language
+
+------------------------------
+
 -- PLANT ENTITY QUERIES
 
 -- (READ/SELECT) Get all Plants to populate on the plant page so users can browse plants
