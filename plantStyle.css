@@ -1,3 +1,11 @@
+.Search{
+   border-color: black;
+    border-style: solid;
+    align-content: center;
+    text-align: center;
+    padding: 25px; 
+}
+
 .addPlant{
     border-color: black;
     border-style: solid;
