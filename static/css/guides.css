@@ -20,6 +20,7 @@ input[type=text]{
     height: 500px;
     padding-top: 30px;
 }
+
 table, th, td {
     border-color: black;
     border-style: solid;

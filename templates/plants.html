@@ -13,7 +13,37 @@
 </div>
 
 <div class="specificPlant">
-    <p> This area is reserved for plant entries. Clicking on a plant entry will link to its care requirements</p> 
+    <p> This area is reserved for plant entries. Clicking on a plant entry will link to its care requirements</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Plant ID</th>
+                <th>Common Name</th>
+                <th>Scientific Name</th>
+                <th>Type</th>
+                <th>Color</th>
+                <th>Variegated?</th>
+                <th>Pet Safe?</th>
+                <th>Max Size</th>
+                <th>Picture</th>
+                <th>Care ID</th>
+            </tr>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+                <td>{{item[2]}}</td>
+                <td>{{item[3]}}</td>
+                <td>{{item[4]}}</td>
+                <td>{{item[5]}}</td>
+                <td>{{item[6]}}</td>
+                <td>{{item[7]}}</td>
+                <td>{{item[8]}}</td>
+                <td>{{item[9]}}</td>
+            </tr>
+            {% endfor %}
+    </table>
     <button onclick="location.href='care'" type="button">
         view care requirements
     </button>

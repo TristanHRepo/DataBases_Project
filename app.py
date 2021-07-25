@@ -23,7 +23,9 @@ def root():
 
 @app.route('/plants')
 def plants():
-    return render_template('plants.html')
+    cursor.execute("SELECT * FROM `Plants`")
+    plant_data = cursor.fetchall()
+    return render_template('plants.html', data=plant_data)
 
 @app.route('/care')
 def care():
@@ -33,8 +35,6 @@ def care():
 def guides():
     cursor.execute("SELECT * FROM `Guides`")
     guide_data = cursor.fetchall()
-    print(guide_data)
-
     return render_template('guides.html', data=guide_data)
 
 @app.route('/guides/create')
