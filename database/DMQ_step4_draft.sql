@@ -72,7 +72,7 @@ VALUES (:title_from_form, :video_from_form, :description_from_form, :logged_in_u
 -- EXPERTS ENTITY QUERIES
 
 -- (READ/SELECT) Display Expert tag on User Profile/Written Guides
-SELECT tagMame, tagDescription FROM Experts WHERE expertID = ?
+SELECT tagName, tagDescription FROM Experts WHERE expertID = ?
 
 --(CREATE/INSERT) Insert into the experts table
 INSERT INTO Experts (tagName, tagDescription)
