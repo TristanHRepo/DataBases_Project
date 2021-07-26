@@ -5,7 +5,7 @@
 -- PLANT ENTITY QUERIES
 
 -- (READ/SELECT) Get all Plants to populate on the plant page so users can browse plants
-SELECT * FROM Plants;
+SELECT commonName, type, picture FROM Plants;
 
 -- (READ/SELECT) Get Plants that match results from search filter
 SELECT * FROM Plants WHERE type = :plant_type_selected_from_radio_buttons AND commonName = :name_entered_in_search_bar OR scienceName = :name_entered_in_search_bar;
@@ -62,6 +62,9 @@ DELETE FROM PlantsOwned WHERE userID = :logged_in_user AND plantID = :plant_to_d
 
 --(READ/SELECT) Get the Guides
 SELECT * FROM Guides;
+
+--(READ/SELECT) Get the Guides for display
+SELECT title, userID FROM Guides;
 
 --(CREATE/INSERT) Insert a new guide into the Guides table
 INSERT INTO Guides (title, video, description, userID)
