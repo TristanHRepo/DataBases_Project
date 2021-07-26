@@ -30,6 +30,15 @@ careID int,
 FOREIGN KEY (careID) REFERENCES Care(careID)
 );
 
+-- Users Table
+CREATE TABLE Users (
+userID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+first varchar(255) NOT NULL,
+last varchar(255) NOT NULL,
+email varchar(255) NOT NULL,
+location varchar(255),
+picture varbinary(8000));
+
 -- Guides Table
 CREATE TABLE Guides (
 guideID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
