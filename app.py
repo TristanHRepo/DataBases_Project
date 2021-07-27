@@ -3,7 +3,6 @@ import os
 from flaskext.mysql import MySQL
 from dotenv import load_dotenv, find_dotenv
 
-
 load_dotenv(find_dotenv())
 
 app = Flask(__name__)
@@ -15,7 +14,7 @@ app.config['MYSQL_DATABASE_HOST'] = os.environ.get("340DBHOST")
 mysql.init_app(app)
 
 conn = mysql.connect()
-cursor =conn.cursor()
+cursor = conn.cursor()
 
 @app.route('/')
 def root():
@@ -118,8 +117,6 @@ def adminsue():
     data = cursor.fetchall()
     return render_template('adminue.html', data=data)
 
-# Listener
-
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 7777))
-    app.run(port=port)
+    app.run(port=port, debug=True)
