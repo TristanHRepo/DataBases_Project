@@ -14,7 +14,6 @@ app.config['MYSQL_DATABASE_HOST'] = os.environ.get("340DBHOST")
 mysql.init_app(app)
 
 conn = mysql.connect()
-cursor = conn.cursor()
 
 @app.route('/')
 def root():
@@ -24,17 +23,23 @@ def root():
 def plants():
     if request.method == 'POST':
         if request.form['plant'] == 'all':
+            cursor = conn.cursor()
             cursor.execute("SELECT picture, commonName, type  FROM `Plants`")
             plant_data = cursor.fetchall()
+            cursor.close()
             return render_template('plants.html', data=plant_data)
         else:
             type = request.form['plant']
+            cursor = conn.cursor()
             query = f"SELECT picture, commonName, type  FROM `Plants` WHERE type='{type}'"
             cursor.execute(query)
             plant_data = cursor.fetchall()
+            cursor.close()
             return render_template('plants.html', data=plant_data)
+    cursor = conn.cursor()
     cursor.execute("SELECT picture, commonName, type  FROM `Plants`")
     plant_data = cursor.fetchall()
+    cursor.close()
     return render_template('plants.html', data=plant_data)
 
 @app.route('/care')
@@ -43,8 +48,10 @@ def care():
 
 @app.route('/guides')
 def guides():
+    cursor = conn.cursor()
     cursor.execute("SELECT * FROM `Guides`")
     guide_data = cursor.fetchall()
+    cursor.close()
     return render_template('guides.html', data=guide_data)
 
 @app.route('/guides/create')
@@ -77,44 +84,58 @@ def admins():
 
 @app.route('/admins/users')
 def adminsusers():
+    cursor = conn.cursor()
     cursor.execute("SELECT * FROM `Users`")
     data = cursor.fetchall()
+    cursor.close()
     return render_template('adminusers.html', data=data)
 
 @app.route('/admins/plants')
 def adminsplants():
+    cursor = conn.cursor()
     cursor.execute("SELECT * FROM `Plants`")
     data = cursor.fetchall()
+    cursor.close()
     return render_template('adminplants.html', data=data)
 
 @app.route('/admins/care')
 def adminscare():
+    cursor = conn.cursor()
     cursor.execute("SELECT * FROM `Care`")
     data = cursor.fetchall()
+    cursor.close()
     return render_template('admincare.html', data=data)
 
 @app.route('/admins/guides')
 def adminsguides():
+    cursor = conn.cursor()
     cursor.execute("SELECT * FROM `Guides`")
     data = cursor.fetchall()
+    cursor.close()
     return render_template('adminguides.html', data=data)
 
 @app.route('/admins/experts')
 def adminsexperts():
+    cursor = conn.cursor()
     cursor.execute("SELECT * FROM `Experts`")
     data = cursor.fetchall()
+    cursor.close()
     return render_template('adminexperts.html', data=data)
 
 @app.route('/admins/plantsowned')
 def adminspo():
+    cursor = conn.cursor()
     cursor.execute("SELECT * FROM `PlantsOwned`")
     data = cursor.fetchall()
+    cursor.close()
     return render_template('adminpo.html', data=data)
 
 @app.route('/admins/userexperts')
 def adminsue():
+    cursor = conn.cursor()
     cursor.execute("SELECT * FROM `UserExpert`")
     data = cursor.fetchall()
+    cursor.close()
     return render_template('adminue.html', data=data)
 
 if __name__ == "__main__":
