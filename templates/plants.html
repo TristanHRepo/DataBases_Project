@@ -2,7 +2,7 @@
 {% block styling %}
     <link rel="stylesheet" href="static/css/plantStyle.css">
 {% endblock styling %}
-{% block banner %}<h1>Plants Page</h1>{% endblock banner %}
+{% block banner %}Plants{% endblock banner %}
 {% block content %}
 
 <div class="About">
@@ -17,14 +17,19 @@
     <input type="text" placeholder="Search.." name="search">
     <input type="submit" value="Search">
     <p>Filter search by plant type:</p>
-    <input type="radio" id="succulents" name="succulent" value="succulents">
-    <label for="succulents">Succulents</label><br>
-    <input type="radio" id="cacti" name="cacti" value="cacti">
-    <label for="cacti">Cacti</label><br>
-    <input type="radio" id="foliage" name="foliage" value="foliage">
-    <label for="foliage">Foliage</label><br>
-    <input type="radio" id="palm" name="palm" value="palm">
-    <label for="palm">Palm</label><br>
+    <form method="post">
+        <input type="radio" id="all" name="plant" value="all" checked>
+        <label for="all">All</label><br>
+        <input type="radio" id="succulents" name="plant" value="Succulent">
+        <label for="succulents">Succulents</label><br>
+        <input type="radio" id="cacti" name="plant" value="Cactus">
+        <label for="cacti">Cacti</label><br>
+        <input type="radio" id="foliage" name="plant" value="Foliage">
+        <label for="foliage">Foliage</label><br>
+        <input type="radio" id="palm" name="plant" value="Palm">
+        <label for="palm">Palm</label><br>
+        <input type="submit" value="Submit">
+    </form>
 </div>
 
 <div class="specificPlant">
@@ -32,30 +37,16 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Plant ID</th>
-                <th>Common Name</th>
-                <th>Scientific Name</th>
-                <th>Type</th>
-                <th>Color</th>
-                <th>Variegated?</th>
-                <th>Pet Safe?</th>
-                <th>Max Size</th>
                 <th>Picture</th>
-                <th>Care ID</th>
+                <th>Common Name</th>
+                <th>Type</th>
             </tr>
         <tbody>
             {% for item in data %}
             <tr>
                 <td>{{item[0]}}</td>
-                <td>{{item[1]}}</td>
+                <td><a href="/care" class="plantNames">{{item[1]}}</a></td>
                 <td>{{item[2]}}</td>
-                <td>{{item[3]}}</td>
-                <td>{{item[4]}}</td>
-                <td>{{item[5]}}</td>
-                <td>{{item[6]}}</td>
-                <td>{{item[7]}}</td>
-                <td>{{item[8]}}</td>
-                <td>{{item[9]}}</td>
             </tr>
             {% endfor %}
     </table>

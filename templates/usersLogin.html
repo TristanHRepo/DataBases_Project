@@ -2,12 +2,12 @@
 {% block styling %}
     <link rel="stylesheet" href="static/css/userLogin.css">
 {% endblock styling %}
-{% block banner %}<h1>Users Page</h1>{% endblock banner %}
+{% block banner %}Users{% endblock banner %}
 {% block content %}
 
 <div class="loginContainer">
     <h2>Login!</h2>
-    <form method="post" action="" class="login">
+    <form class="login">
         <label for="userName">UserName:</label>
         <input type="text" id="userName" name="userName" placeholder="...">
 
@@ -22,10 +22,10 @@
 </div>
 
 <div class="registerContainer">
-    <button onclick="location.href='users'" type="button">
+    <button onclick="location.href='register'" type="button">
         register!
     </button>
-    <button onclick="location.href='register'" type="button">
+    <button onclick="location.href='users'" type="button">
         logged in
     </button>
 

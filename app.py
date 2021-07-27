@@ -1,4 +1,4 @@
-from flask import Flask, render_template, json
+from flask import Flask, render_template, json, request
 import os
 from flaskext.mysql import MySQL
 from dotenv import load_dotenv, find_dotenv
@@ -21,9 +21,20 @@ cursor =conn.cursor()
 def root():
     return render_template('index.html')
 
-@app.route('/plants')
+@app.route('/plants', methods=['GET', 'POST'])
 def plants():
-    cursor.execute("SELECT * FROM `Plants`")
+    if request.method == 'POST':
+        if request.form['plant'] == 'all':
+            cursor.execute("SELECT picture, commonName, type  FROM `Plants`")
+            plant_data = cursor.fetchall()
+            return render_template('plants.html', data=plant_data)
+        else:
+            type = request.form['plant']
+            query = f"SELECT picture, commonName, type  FROM `Plants` WHERE type='{type}'"
+            cursor.execute(query)
+            plant_data = cursor.fetchall()
+            return render_template('plants.html', data=plant_data)
+    cursor.execute("SELECT picture, commonName, type  FROM `Plants`")
     plant_data = cursor.fetchall()
     return render_template('plants.html', data=plant_data)
 
@@ -111,4 +122,4 @@ def adminsue():
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 7777))
-    app.run(port=port, debug=True)
+    app.run(port=port)
