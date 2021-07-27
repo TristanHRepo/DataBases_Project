@@ -32,3 +32,16 @@
 .navBarElement:hover {
     background-color: #09a4a4;
 }
+
+.Banner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bannerBox {
+    margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+    width: 200px;
+    text-align: center;
+}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="static/css/expertsStyle.css">
+{% endblock styling %}
+{% block banner %}Experts{% endblock banner %}
+{% block content %}
+
+<div class="About">
+    <div class="text">
+        <h2>Become an expert!</h2>
+        <p>Users of the Plant Parenting application can apply to become experts by filling out the form below (CREATE). Once the application has been approved, you will receive a tag next to your name signifying that you are an expert in your respective field.</p> 
+        <p>Becoming an expert lets other users know that the guides you write are reliable and the advice they contain is trustworthy.</p> 
+    </div>
+</div>
+
+<div class="expertForm">
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname">
+
+        <p>What is your area of expertise?</p> 
+        <input type="radio" id="succulents" name="succulent" value="succulents">
+        <label for="succulents">Succulents</label><br>
+        <input type="radio" id="cacti" name="cacti" value="cacti">
+        <label for="cacti">Cacti</label><br>
+        <input type="radio" id="foliage" name="foliage" value="foliage">
+        <label for="foliage">Foliage</label><br>
+        <input type="radio" id="palm" name="palm" value="palm">
+        <label for="palm">Palm</label><br>
+
+        <br>
+        <label for="qualifications">Description of qualifications:</label><br>
+        <input type="text" id="qualifications" name="qualifications"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock content %}
+

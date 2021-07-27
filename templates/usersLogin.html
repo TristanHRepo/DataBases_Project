@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="static/css/userLogin.css">
+{% endblock styling %}
+{% block banner %}Users{% endblock banner %}
+{% block content %}
+
+<div class="loginContainer">
+    <h2>Login!</h2>
+    <form class="login">
+        <label for="userName">UserName:</label>
+        <input type="text" id="userName" name="userName" placeholder="...">
+
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" placeholder="...">
+
+        <input type="submit" value="Submit">
+    </form>
+    <p>
+        This area is reserved for the login box. (READ)
+    </p>
+</div>
+
+<div class="registerContainer">
+    <button onclick="location.href='register'" type="button">
+        register!
+    </button>
+    <button onclick="location.href='users'" type="button">
+        logged in
+    </button>
+
+    <p>
+        This area will be for the Register button primarily. Right now the two buttons direct
+        to the register page and the logged in page. The logged in page is what the user will see
+        if they log in or are already logged in on the website.
+    </p>
+</div>
+
+{% endblock content %}

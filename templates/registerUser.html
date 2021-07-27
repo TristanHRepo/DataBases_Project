@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="static/css/register.css">
+{% endblock styling %}
+{% block banner %}Users{% endblock banner %}
+{% block content %}
+
+<div class="registerContainer">
+
+    <h2>Please enter the following!</h2>
+    <form>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" placeholder="...">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="...">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="...">
+
+        <input type="submit" value="Register!">
+    </form>
+
+    <p>
+        This is where a user will register an account with the database. This will allow the user
+        the access to create other items on the website. (CREATE)
+    </p>
+
+</div>
+
+{% endblock content %}

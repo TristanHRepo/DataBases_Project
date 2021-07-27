@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Plant Parenting</title>
-    <link rel="stylesheet" href="public/css/navbar.css">
-</head>
-<body>
-<div class="Banner">
-    <h1>Home Page</h1>
-</div>
-
-<div class="Heading">
-    <ul id="navBar">
-        <li class="navBarElement"><a href="index.html">Home</a></li>
-        <li class="navBarElement"><a href="public/html/plants.html">Plants</a></li>
-        <li class="navBarElement"><a href="public/html/guides.html">Guides</a></li>
-        <li class="navBarElement"><a href="public/html/usersLogin.html">User</a></li>
-        <li class="navBarElement"><a href="public/html/experts.html">For Experts</a></li>
-    </ul>
-</div>
+{% extends "layout.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="static/css/index.css">
+{% endblock styling %}
+{% block banner %}Home{% endblock banner %}
+{% block content %}
 
 <div class="About">
     <div class="text">
@@ -35,10 +20,11 @@
         have gained in caring for your plants. This webpage also allows a user like you to create guides!</p>
         <p>We also have a user area for your very own account, where you can find the plants that you have claimed as
         your own, personalize your profile, and update the details about you.</p>
-        <p>Finally, if you are an expert in something, then you can apply for an Experts tag, which will let users know
+        <p>If you are an expert in something, then you can apply for an Experts tag, which will let users know
         that the guides and content you put out is backed by an expert in the field!</p>
+        <p>Finally, admin features (database table manipulation) are available in the DB admin tab </p>
         <p>We hope you find this app as a useful tool in your plant care.</p>
     </div>
 </div>
-</body>
-</html>
+
+{% endblock content %}

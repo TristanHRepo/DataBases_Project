@@ -1,0 +1,46 @@
+.addPlant{
+    border-color: black;
+    border-style: solid;
+    align-content: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.About{
+	text-align: center;
+}
+
+.specificPlant{
+	border-color: black;
+    border-style: solid;
+    align-content: center;
+    text-align: center;
+    padding: 25px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    margin: auto;
+}
+
+.plantNames:link {
+  text-decoration: none;
+  color: green;
+}
+
+.plantNames:visited {
+  text-decoration: none;
+  color: green;
+}
+
+.plantNames:hover {
+  text-decoration: underline;
+}
+
+.plantNames:active {
+  text-decoration: underline;
+}

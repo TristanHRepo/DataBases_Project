@@ -1,0 +1,42 @@
+{% extends "admins.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="/static/css/adminTables.css">
+{% endblock styling %}
+{% block content %}
+<div class="tableContainer">
+     <table class="table">
+        <thead>
+            <tr>
+                <th>Care ID</th>
+                <th>Water</th>
+                <th>Light (hrs)</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Fertilizer</th>
+                <th>Soil</th>
+                <th>ACTIONS</th>
+            </tr>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>{{item[1]}}</td>
+                <td>{{item[2]}}</td>
+                <td>{{item[3]}}</td>
+                <td>{{item[4]}}</td>
+                <td>{{item[5]}}</td>
+                <td>{{item[6]}}</td>
+                <td>
+                    <button type="button">
+                        Edit
+                    </button>
+                    <button type="button">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+    </table>
+</div>
+
+{% endblock content %}

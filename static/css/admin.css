@@ -1,0 +1,14 @@
+
+.explanation {
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    align-content: center;
+}
