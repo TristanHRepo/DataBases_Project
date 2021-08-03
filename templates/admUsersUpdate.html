@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "admins.html" %}
+{% block styling %}
+    <link rel="stylesheet" href="/static/css/adminTables.css">
+{% endblock styling %}
+{% block content %}
+    <h1>UPDATE INFORMATION FOR USER ID:{{data[0][0]}}</h1>
+    <form method="post">
+        <input type="hidden" name="id" value="{{data[0][0]}}">
 
-</body>
-</html>
+        <label for="first">First Name:</label>
+        <input type="text" id="first" name="first" value="{{data[0][1]}}" required>
+
+        <label for="last">Last Name:</label>
+        <input type="text" id="last" name="last" value="{{data[0][2]}}" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{data[0][3]}}" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="{{data[0][4]}}">
+
+        <label for="picture">Picture:</label>
+        <input type="file" id="picture" name="picture" value="{{data[0][8]}}" accept=".jpg, .jpeg, .png, .image/*">
+
+        <input type="submit" name="function" value="update">
+    </form>
+{% endblock content %}

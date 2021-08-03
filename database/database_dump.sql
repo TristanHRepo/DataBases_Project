@@ -59,6 +59,7 @@ userID int NOT NULL,
 plantID int NOT NULL,
 FOREIGN KEY (userID) REFERENCES Users(userID),
 FOREIGN KEY (plantID) REFERENCES Plants(plantID)
+PRIMARY KEY (userID, plantID)
 );
 
 -- UserExpert Table
@@ -67,6 +68,7 @@ userID int NOT NULL,
 expertID int NOT NULL,
 FOREIGN KEY (userID) REFERENCES Users (userID),
 FOREIGN KEY (expertID) REFERENCES Experts (expertID)
+PRIMARY KEY (userID, expertID)
 );
 
 
