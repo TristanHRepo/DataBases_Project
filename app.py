@@ -1,4 +1,4 @@
-from flask import Flask, render_template, json, request
+from flask import Flask, render_template, redirect, request
 import os
 from flaskext.mysql import MySQL
 from dotenv import load_dotenv, find_dotenv
@@ -19,6 +19,7 @@ def database_query(query):
     conn = mysql.connect()
     cursor = conn.cursor()
     cursor.execute(query)
+    conn.commit()
     data = cursor.fetchall()
     cursor.close()
     conn.close()
@@ -95,7 +96,8 @@ def admins():
     return render_template('admins.html')
 
 
-@app.route('/admins/users')
+@app.route('/admins/users', methods=['GET', 'POST'])
+@app.route('/admins/care/update_care', methods=['GET', 'POST'])
 def adminsusers():
     query = "SELECT * FROM `Users`"
     data = database_query(query)
@@ -109,15 +111,87 @@ def adminsplants():
     return render_template('adminplants.html', data=data)
 
 
-@app.route('/admins/care')
+@app.route('/admins/care', methods=['GET', 'POST'])
+@app.route('/admins/care/update_care', methods=['GET', 'POST'])
 def adminscare():
+    if request.method == 'POST':
+
+        # POST to get the current information for placeholders in form
+        if request.form['function'] == 'edit':
+            id = request.form['id']
+            select_query = f"SELECT * FROM `Care` WHERE careID='{id}'"
+            select_data = database_query(select_query)
+            return render_template('admCareUpdate.html', data=select_data)
+
+        # POST to send UPDATE query to DB
+        elif request.form['function'] == 'update':
+            id = request.form['id']
+            water = request.form['water']
+            light = request.form['light']
+            temp = request.form['temp']
+            humidity = request.form['humidity']
+            fert = request.form['fert']
+            soil = request.form['soil']
+
+            update_query = f"UPDATE `Care` SET water = '{water}', light = CAST('{light}' AS time), temperature = " \
+                           f"CAST('{temp}' AS int) , humidity = '{humidity}', fertilizer = '{fert}', soil = '{soil}' " \
+                           f"WHERE careID = '{id}'" \
+
+            database_query(update_query)
+            return redirect('/admins/care')
+
+        # POST to DELETE a row
+        elif request.form['function'] == 'delete':
+            id = request.form['id']
+            delete_query = f"DELETED FROM `Care` WHERE careID = '{id}'"
+            database_query(delete_query)
+            return redirect('/admins/care')
+
+    # Default GET table to be displayed
     query = "SELECT * FROM `Care`"
     data = database_query(query)
     return render_template('admincare.html', data=data)
 
-
-@app.route('/admins/guides')
+@app.route('/admins/guides', methods=['GET', 'POST'])
+@app.route('/admins/guides/update_guide', methods=['GET', 'POST'])
 def adminsguides():
+    if request.method == 'POST':
+
+        # POST to get the current information for placeholders in form
+        if request.form['function'] == 'edit':
+            id = request.form['id']
+            select_query = f"SELECT * FROM `Guides` WHERE guideID='{id}'"
+            select_data = database_query(select_query)
+            return render_template('admGuidesUpdate.html', data=select_data)
+
+        # POST to send UPDATE query to DB
+        elif request.form['function'] == 'update':
+            id = request.form['id']
+            title = request.form['title']
+            video = request.form['video']
+            desc = request.form['desc']
+            plantid = request.form['plantid']
+            userid = request.form['userid']
+
+            if plantid == ' ' or plantid == '':
+                update_query = f"UPDATE `Guides` SET title = '{title}', video = '{video}', description = " \
+                               f"'{desc}' , plantid = NULL, userid = '{userid}' WHERE guideID = '{id}'"
+            else:
+                update_query = f"UPDATE `Guides` SET title = '{title}', video = '{video}', description = " \
+                           f"'{desc}' , plantid = CAST('{plantid}' AS int), userid = CAST('{userid}' AS int)" \
+                           f"WHERE guideID = '{id}'" \
+
+            database_query(update_query)
+            return redirect('/admins/guides')
+
+        # POST to DELETE a row
+        elif request.form['function'] == 'delete':
+            id = request.form['id']
+            delete_query = f"DELETED FROM `Guides` WHERE guideID = '{id}'"
+            database_query(delete_query)
+            return redirect('/admins/guides')
+
+    # Default GET table to be displayed
     query = "SELECT * FROM `Guides`"
     data = database_query(query)
     return render_template('adminguides.html', data=data)

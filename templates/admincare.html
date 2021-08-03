@@ -27,12 +27,14 @@
                 <td>{{item[5]}}</td>
                 <td>{{item[6]}}</td>
                 <td>
-                    <button type="button">
-                        Edit
-                    </button>
-                    <button type="button">
-                        Delete
-                    </button>
+                    <form action="/admins/care/update_care" method="post">
+                        <input type="hidden" name="id" value="{{item[0]}}">
+                        <input type="submit" name="function" value="edit" />
+                    </form>
+                    <form method="post">
+                        <input type="hidden" name="id" value="{{item[0]}}">
+                        <input type="submit" name="function" value="delete" />
+                    </form>
                 </td>
             </tr>
             {% endfor %}
