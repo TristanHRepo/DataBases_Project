@@ -14,25 +14,29 @@
 </div>
 
 <div class="expertForm">
-    <form>
+    <form method= "post" action="/experts/insertExperts">
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname"><br>
+
         <label for="lname">Last name:</label><br>
         <input type="text" id="lname" name="lname">
 
-        <p>What is your area of expertise?</p> 
-        <input type="radio" id="succulents" name="succulent" value="succulents">
+        <p>Area of Expertise</p> 
+        <input type="radio" id="succulents" name="type" value="succulents" required>
         <label for="succulents">Succulents</label><br>
-        <input type="radio" id="cacti" name="cacti" value="cacti">
+
+        <input type="radio" id="cacti" name="type" value="cacti" required>
         <label for="cacti">Cacti</label><br>
-        <input type="radio" id="foliage" name="foliage" value="foliage">
+
+        <input type="radio" id="foliage" name="type" value="foliage" required>
         <label for="foliage">Foliage</label><br>
-        <input type="radio" id="palm" name="palm" value="palm">
+
+        <input type="radio" id="palm" name="type" value="palm" required>
         <label for="palm">Palm</label><br>
 
         <br>
         <label for="qualifications">Description of qualifications:</label><br>
-        <input type="text" id="qualifications" name="qualifications"><br>
+        <input type="text" id="qualifications" name="qualifications" required><br>
 
         <input type="submit" value="Submit">
     </form>

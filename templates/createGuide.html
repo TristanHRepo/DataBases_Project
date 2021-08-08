@@ -8,15 +8,21 @@
 <div class="createContainer">
 
     <h2>Please enter the following!</h2>
-    <form method="post" action="">
+    <form method="post" action='/guides/create/insert_guide'>
         <label for="title">Title:</label>
-        <input type="text" id="Title" name="Title" placeholder="...">
+        <input type="text" id="Title" name="Title" placeholder="..." required>
 
         <label for="videoLink">Video URL (optional):</label>
-        <input type="url" id="videoLink" name="videoLink" placeholder="...">
+        <input type="text" id="videoLink" name="videoLink" placeholder="...">
 
         <label for="description">Description:</label>
-        <textarea id="description" name="description" placeholder="Description..." style="height:200px"></textarea>
+        <textarea id="description" name="description" placeholder="Description..." style="height:200px" required></textarea>
+
+        <label for="plantID">plantID:</label>
+        <input type="number" id="plantID" name="plantID">
+
+        <label for="userID">userID:</label>
+        <input type="number" id="userID" name="userID">
 
         <input type="submit" value="Submit!">
     </form>

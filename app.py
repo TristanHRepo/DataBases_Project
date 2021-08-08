@@ -51,10 +51,38 @@ def plants():
         plant_data = database_query(query)
         return render_template('plants.html', data=plant_data)
 
+@app.route('/plants/insertPlants', methods=["POST"])
+def insertPlants():
+    common = request.form['commonName']
+    science = request.form['scienceName'] or None
+    plant_type = request.form['type'] or None
+    color = request.form['color'] or None
+    variegated = request.form['variegated'] or None
+    pet = request.form['petSafe'] or None
+    size = request.form['maxSize'] or None
+    careID = request.form['careID'] or None
+    insert_query = "INSERT INTO `Plants` (commonName, scienceName, type, color, variegated, petSafe, maxSize, careID) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    args = (common, science, plant_type, color, variegated, pet, size, careID)
+    database_query(insert_query, args)
+    return redirect('/admins/plants')
+
 
 @app.route('/care')
 def care():
     return render_template('care.html')
+
+@app.route('/care/insertCare', methods=['POST'])
+def insert_care():
+    water = request.form['water']
+    light = request.form['light']
+    temperature = request.form['temperature']
+    humidity = request.form['humidity'] or None
+    fertilizer = request.form['fertilizer'] or None
+    soil = request.form['soil'] or None
+    insert_query = "INSERT INTO `Care` (water, light, temperature, humidity, fertilizer, soil) VALUES (%s, %s, %s, %s, %s, %s)"
+    args = (water, light, temperature, humidity, fertilizer, soil)
+    database_query(insert_query, args)
+    return redirect('/admins/care')
 
 
 @app.route('/guides')
@@ -67,6 +95,20 @@ def guides():
 @app.route('/guides/create')
 def create_guide():
     return render_template('createGuide.html')
+
+
+@app.route('/guides/create/insert_guide', methods = ['POST'])
+def insert_guide():
+    title = request.form['Title']
+    link = request.form['videoLink'] or None
+    description = request.form['description']
+    plantid = request.form['plantID'] or None
+    userid = request.form['userID']
+    insert_query = "INSERT INTO `Guides` (title, video, description, plantID, userID) VALUES (%s, %s, %s, %s, %s)"
+    args = (title, link, description, plantid, userid)
+    database_query(insert_query, args)
+    return redirect('/guides')
+
 
 
 @app.route('/guides/example')
@@ -83,6 +125,18 @@ def users_login():
 def users():
     return render_template('users.html')
 
+@app.route('/users/insertUsers', methods= ['POST'])
+def insertUsers():
+    first = request.form['firstName']
+    last = request.form['lastName']
+    email = request.form['email']
+    location = request.form['location'] or None
+    insert_query = "INSERT INTO `Users` (first, last, email, location) VALUES (%s, %s, %s, %s)"
+    args = (first, last, email, location)
+    database_query(insert_query, args)
+    return redirect('/admins/users')
+
+
 
 @app.route('/register')
 def register():
@@ -93,6 +147,14 @@ def register():
 def experts():
     return render_template('experts.html')
 
+@app.route('/experts/insertExperts', methods= ['POST'])
+def insertExperts():
+    tagName = request.form['type']
+    tagDescription = request.form['qualifications']
+    insert_query = "INSERT INTO `Experts` (tagName, tagDescription) VALUES (%s, %s)"
+    args = (tagName, tagDescription)
+    database_query(insert_query, args)
+    return redirect('/admins/experts')
 
 @app.route('/admins')
 def admins():

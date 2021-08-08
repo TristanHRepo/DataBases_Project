@@ -56,20 +56,37 @@
 </div>
 
 <div class="addPlant">
-    <form>
-        <p>Don't see a plant you have? Add it here!</p>
+    <form method="post" action="/plants/insertPlants">
+        <p>Insert Plants Here:</p>
         <label for="commonName">Common Name (Required):</label><br>
-        <input type="text" id="commonName" name="commonName"><br>
+        <input type="text" id="commonName" name="commonName" required><br>
+
         <label for="scienceName">Scientific Name:</label><br>
         <input type="text" id="scienceName" name="scienceName"><br>
+
         <label for="type">Type:</label><br>
         <input type="text" id="type" name="type"><br>
-        <label for="variegated">Variegated (Yes/No):</label><br>
-        <input type="text" id="variegated" name="variegated"><br>
-        <label for="petSafe">Pet Safe (Yes/No):</label><br>
-        <input type="text" id="petSafe" name="petSafe"><br>
+
+        <label for="color">Color:</label><br>
+        <input type="text" id="color" name="color"><br>
+
+        <label for="variegated">Variegated:</label>
+        <select id="variegated" name="variegated">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+
+        <label for="petSafe">Pet Safe?:</label>
+        <select id="petSafe" name="petSafe">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+
         <label for="maxSize">Max Size:</label><br>
         <input type="text" id="maxSize" name="maxSize"><br>
+
+        <label for="careID">CareID:</label><br>
+        <input type="number" id="careID" name="careID"><br>
         
         <br>
         

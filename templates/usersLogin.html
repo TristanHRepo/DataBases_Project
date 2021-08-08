@@ -5,35 +5,23 @@
 {% block banner %}Users{% endblock banner %}
 {% block content %}
 
-<div class="loginContainer">
-    <h2>Login!</h2>
-    <form class="login">
-        <label for="userName">UserName:</label>
-        <input type="text" id="userName" name="userName" placeholder="...">
+<div class="addUser">
+    <h2>Add a new user:</h2>
+    <form method="post" action="/users/insertUsers">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" placeholder="..." required>
 
-        <label for="password">Password:</label>
-        <input type="text" id="password" name="password" placeholder="...">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="..." required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="..." required>
+
+        <label for="location">Location (Form "Seattle, WA"):</label> 
+        <input type="text" id="location" name="location" placeholder="...">
 
         <input type="submit" value="Submit">
     </form>
-    <p>
-        This area is reserved for the login box. (READ)
-    </p>
-</div>
-
-<div class="registerContainer">
-    <button onclick="location.href='register'" type="button">
-        register!
-    </button>
-    <button onclick="location.href='users'" type="button">
-        logged in
-    </button>
-
-    <p>
-        This area will be for the Register button primarily. Right now the two buttons direct
-        to the register page and the logged in page. The logged in page is what the user will see
-        if they log in or are already logged in on the website.
-    </p>
 </div>
 
 {% endblock content %}

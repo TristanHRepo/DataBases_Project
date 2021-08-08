@@ -13,18 +13,23 @@
 </div>
 
 <div class="customCare">
-    <form>
+    <form method="post" action="/care/insertCare">
         <p>Add custom care for your plant here!</p>
         <label for="water">Water (Required):</label><br>
-        <input type="text" id="water" name="water"><br>
+        <input type="text" id="water" name="water" required><br>
+
         <label for="light">Light (Required):</label><br>
-        <input type="text" id="light" name="light"><br>
+        <input type="time" id="light" name="light" required><br>
+
         <label for="temperature">Temperature (Required):</label><br>
-        <input type="text" id="temperature" name="temperature"><br>
+        <input type="number" id="temperature" name="temperature" required><br>
+
         <label for="humidity">Humidity:</label><br>
         <input type="text" id="humidity" name="humidity"><br>
+
         <label for="fertilizer">Fertilizer:</label><br>
         <input type="text" id="fertilizer" name="fertilizer"><br>
+        
         <label for="soil">Soil:</label><br>
         <input type="text" id="soil" name="soil"><br>
         
