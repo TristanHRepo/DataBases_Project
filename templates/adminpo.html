@@ -19,10 +19,12 @@
                 <td>
                     <form action="/admins/plantsowned/update_po" method="post">
                         <input type="hidden" name="id" value="{{item[0]}}">
+                        <input type="hidden" name="id2" value="{{item[1]}}">
                         <input type="submit" name="function" value="edit" />
                     </form>
                     <form method="post">
                         <input type="hidden" name="id" value="{{item[0]}}">
+                        <input type="hidden" name="id2" value="{{item[1]}}">
                         <input type="submit" name="function" value="delete" />
                     </form>
                 </td>
@@ -31,4 +33,17 @@
     </table>
 </div>
 
+<h2>Add a plant for a user:</h2>
+
+<div class="insertContainer">
+    <form method="post">
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" value="" required>
+
+        <label for="plantId">Plant ID:</label>
+        <input type="text" id="plantId" name="plantId" value="" required>
+
+        <input type="submit" name="function" value="insert">
+    </form>
+</div>
 {% endblock content %}

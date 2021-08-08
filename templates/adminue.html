@@ -17,16 +17,33 @@
                 <td>{{item[0]}}</td>
                 <td>{{item[1]}}</td>
                 <td>
-                    <button type="button">
-                        Edit
-                    </button>
-                    <button type="button">
-                        Delete
-                    </button>
+                    <form action="/admins/userexperts/update_ue" method="post">
+                        <input type="hidden" name="id" value="{{item[0]}}">
+                        <input type="hidden" name="id2" value="{{item[1]}}">
+                        <input type="submit" name="function" value="edit" />
+                    </form>
+                    <form method="post">
+                        <input type="hidden" name="id" value="{{item[0]}}">
+                        <input type="hidden" name="id2" value="{{item[1]}}">
+                        <input type="submit" name="function" value="delete" />
+                    </form>
                 </td>
             </tr>
             {% endfor %}
     </table>
 </div>
 
+<h2>Add an expert tag for a user:</h2>
+
+<div class="insertContainer">
+    <form method="post">
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" value="" required>
+
+        <label for="expertId">Expert ID:</label>
+        <input type="text" id="expertId" name="expertId" value="" required>
+
+        <input type="submit" name="function" value="insert">
+    </form>
+</div>
 {% endblock content %}
