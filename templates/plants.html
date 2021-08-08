@@ -14,10 +14,8 @@
 </div>
 
 <div class="Search">
-    <input type="text" placeholder="Search.." name="search">
-    <input type="submit" value="Search">
-    <p>Filter search by plant type:</p>
-    <form method="post">
+    <h2>Filter search by plant type:</h2>
+    <form method="post" action="/admins/plants/search">
         <input type="radio" id="all" name="plant" value="all" checked>
         <label for="all">All</label><br>
         <input type="radio" id="succulents" name="plant" value="Succulent">

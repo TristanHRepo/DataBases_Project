@@ -34,22 +34,22 @@ def root():
     return render_template('index.html')
 
 
-@app.route('/plants', methods=['GET', 'POST'])
+@app.route('/admins/plants/search', methods=['GET', 'POST'])
 def plants():
     if request.method == 'POST':
         if request.form['plant'] == 'all':
-            query = "SELECT picture, commonName, type  FROM `Plants`"
+            query = "SELECT * FROM `Plants`"
             plant_data = database_query(query)
-            return render_template('plants.html', data=plant_data)
+            return render_template('adminplants.html', data=plant_data)
         else:
             type = request.form['plant']
-            query = f"SELECT picture, commonName, type  FROM `Plants` WHERE type='{type}'"
+            query = f"SELECT * FROM `Plants` WHERE type='{type}'"
             plant_data = database_query(query)
-            return render_template('plants.html', data=plant_data)
+            return render_template('adminplants.html', data=plant_data)
     else:
-        query = "SELECT picture, commonName, type  FROM `Plants`"
+        query = "SELECT * FROM `Plants`"
         plant_data = database_query(query)
-        return render_template('plants.html', data=plant_data)
+        return render_template('adminplants.html', data=plant_data)
 
 @app.route('/plants/insertPlants', methods=["POST"])
 def insertPlants():
@@ -107,7 +107,7 @@ def insert_guide():
     insert_query = "INSERT INTO `Guides` (title, video, description, plantID, userID) VALUES (%s, %s, %s, %s, %s)"
     args = (title, link, description, plantid, userid)
     database_query(insert_query, args)
-    return redirect('/guides')
+    return redirect('/admins/guides')
 
 
 

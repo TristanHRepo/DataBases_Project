@@ -3,7 +3,33 @@
     <link rel="stylesheet" href="/static/css/adminTables.css">
 {% endblock styling %}
 {% block content %}
+
+<div class="createContainer">
+
+    <h2>Insert New Guides:</h2>
+    <form method="post" action='/guides/create/insert_guide'>
+        <label for="title">Title:</label>
+        <input type="text" id="Title" name="Title" required><br>
+
+        <label for="videoLink">Video URL (optional):</label>
+        <input type="text" id="videoLink" name="videoLink"><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required><br>
+
+        <label for="plantID">plantID:</label>
+        <input type="number" id="plantID" name="plantID"><br>
+
+        <label for="userID">userID:</label>
+        <input type="number" id="userID" name="userID"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</div>
+
 <div class="tableContainer">
+    <h2>Guides:</h2>
      <table class="table">
         <thead>
             <tr>

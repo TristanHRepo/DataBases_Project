@@ -10,13 +10,13 @@
     <h2>Please enter the following!</h2>
     <form method="post" action='/guides/create/insert_guide'>
         <label for="title">Title:</label>
-        <input type="text" id="Title" name="Title" placeholder="..." required>
+        <input type="text" id="Title" name="Title" required>
 
         <label for="videoLink">Video URL (optional):</label>
-        <input type="text" id="videoLink" name="videoLink" placeholder="...">
+        <input type="text" id="videoLink" name="videoLink">
 
         <label for="description">Description:</label>
-        <textarea id="description" name="description" placeholder="Description..." style="height:200px" required></textarea>
+        <textarea id="description" name="description" style="height:200px" required></textarea>
 
         <label for="plantID">plantID:</label>
         <input type="number" id="plantID" name="plantID">
@@ -27,10 +27,6 @@
         <input type="submit" value="Submit!">
     </form>
 
-    <p>
-        This is where a user will create a guide. A title and description is all that is required to create a guide.
-        This form will be submitted to the server and added to the database. (CREATE)
-    </p>
 </div>
 
 {% endblock content %}

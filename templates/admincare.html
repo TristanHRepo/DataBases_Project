@@ -3,7 +3,36 @@
     <link rel="stylesheet" href="/static/css/adminTables.css">
 {% endblock styling %}
 {% block content %}
+
+<div class="customCare">
+    <form method="post" action="/care/insertCare">
+        <h2>Insert New Care Instructions:</h2>
+        <label for="water">Water:</label><br>
+        <input type="text" id="water" name="water" required><br>
+
+        <label for="light">Light:</label><br>
+        <input type="time" id="light" name="light" required><br>
+
+        <label for="temperature">Temperature:</label><br>
+        <input type="number" id="temperature" name="temperature" required><br>
+
+        <label for="humidity">Humidity:</label><br>
+        <input type="text" id="humidity" name="humidity"><br>
+
+        <label for="fertilizer">Fertilizer:</label><br>
+        <input type="text" id="fertilizer" name="fertilizer"><br>
+        
+        <label for="soil">Soil:</label><br>
+        <input type="text" id="soil" name="soil"><br>
+        
+        <br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
 <div class="tableContainer">
+    <h2>Care:</h2>
      <table class="table">
         <thead>
             <tr>

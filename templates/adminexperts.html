@@ -3,7 +3,35 @@
     <link rel="stylesheet" href="/static/css/adminTables.css">
 {% endblock styling %}
 {% block content %}
+
+<div class="expertForm">
+    <form method= "post" action="/experts/insertExperts">
+        <h2>Insert New Experts:</h2>
+
+        <p>Area of Expertise:</p> 
+        <input type="radio" id="succulents" name="type" value="succulents" required>
+        <label for="succulents">Succulents</label><br>
+
+        <input type="radio" id="cacti" name="type" value="cacti" required>
+        <label for="cacti">Cacti</label><br>
+
+        <input type="radio" id="foliage" name="type" value="foliage" required>
+        <label for="foliage">Foliage</label><br>
+
+        <input type="radio" id="palm" name="type" value="palm" required>
+        <label for="palm">Palm</label><br>
+
+        <br>
+        <label for="qualifications">Description of Qualifications:</label><br>
+        <input type="text" id="qualifications" name="qualifications" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
 <div class="tableContainer">
+    <h2>Experts:</h2>
      <table class="table">
         <thead>
             <tr>
