@@ -6,7 +6,7 @@
 
 <div class="addPlant">
     <form method="post" action="/plants/insertPlants">
-        <h2>Insert New Plants:</h2>
+        <h2>Insert New Plants</h2>
         <label for="commonName">Common Name:</label><br>
         <input type="text" id="commonName" name="commonName" required><br>
 
@@ -24,6 +24,8 @@
           <option value="0">No</option>
           <option value="1">Yes</option>
         </select>
+
+        <br>
 
         <label for="petSafe">Pet Safe?:</label>
         <select id="petSafe" name="petSafe">
@@ -46,7 +48,7 @@
 </div>
 
 <div class="Search">
-    <h2>Filter search by plant type:</h2>
+    <h2>Filter Search by Plant Type</h2>
     <form method="post" action="/admins/plants/search">
         <input type="radio" id="all" name="plant" value="all" checked>
         <label for="all">All</label><br>
@@ -63,7 +65,7 @@
 </div>
 
 <div class="tableContainer">
-    <h2>Plants:</h2>
+    <h2>Plants</h2>
      <table class="table">
         <thead>
             <tr>

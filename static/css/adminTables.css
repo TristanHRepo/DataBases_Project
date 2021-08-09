@@ -11,7 +11,61 @@ table, th, td {
 
 .addUser {
 	margin: auto;
-	width: 50%;
+	width: 60%;
+	border: 3px solid green;
+	padding: 10px;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.addPlant {
+	margin: auto;
+	width: 60%;
+	border: 3px solid green;
+	padding: 10px;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.Search {
+	margin: auto;
+	width: 60%;
+	border: 3px solid green;
+	padding: 10px;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.customCare {
+	margin: auto;
+	width: 60%;
+	border: 3px solid green;
+	padding: 10px;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.createContainer {
+	margin: auto;
+	width: 60%;
+	border: 3px solid green;
+	padding: 10px;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.expertForm {
+	margin: auto;
+	width: 60%;
+	border: 3px solid green;
+	padding: 10px;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.insertContainer {
+	margin: auto;
+	width: 60%;
 	border: 3px solid green;
 	padding: 10px;
 	text-align: center;
@@ -20,7 +74,7 @@ table, th, td {
 
 .tableContainer {
 	margin: auto;
-	width: 50%;
+	width: 60%;
 	border: 3px solid green;
 	padding: 10px;
 	text-align: center;

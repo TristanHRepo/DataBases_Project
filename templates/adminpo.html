@@ -3,7 +3,22 @@
     <link rel="stylesheet" href="/static/css/adminTables.css">
 {% endblock styling %}
 {% block content %}
+
+<div class="insertContainer">
+    <form method="post">
+        <h2>Add a Plant For a User</h2>
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" value="" required>
+
+        <label for="plantId">Plant ID:</label>
+        <input type="text" id="plantId" name="plantId" value="" required>
+
+        <input type="submit" name="function" value="insert">
+    </form>
+</div>
+
 <div class="tableContainer">
+    <h2>PlantsOwned</h2>
      <table class="table">
         <thead>
             <tr>
@@ -33,17 +48,5 @@
     </table>
 </div>
 
-<h2>Add a plant for a user:</h2>
 
-<div class="insertContainer">
-    <form method="post">
-        <label for="userId">User ID:</label>
-        <input type="text" id="userId" name="userId" value="" required>
-
-        <label for="plantId">Plant ID:</label>
-        <input type="text" id="plantId" name="plantId" value="" required>
-
-        <input type="submit" name="function" value="insert">
-    </form>
-</div>
 {% endblock content %}
