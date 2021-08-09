@@ -13,6 +13,7 @@
     padding: 0;
     overflow: hidden;
     background-color: #35ca32;
+    color: white;
 
 }
 
@@ -22,7 +23,8 @@
 
 .navBarElement a{
     display: block;
-    color: white;
+    color: black;
+    font-weight: bold;
     text-align: center;
     padding: 15px 40px;
     text-decoration: none;

@@ -3,57 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Plant Parenting</title>
-    <link rel="stylesheet" href="/static/css/navbar.css">
     <link rel="stylesheet" href="/static/css/admin.css">
     {% block styling %}{% endblock %}
 
 </head>
 <body>
-<div class="Banner">
-    <h1>ADMINS PAGE</h1>
-</div>
 
-<div class="Heading">
+<!-- <div class="Heading">
     <ul id="navBar">
         <li class="navBarElement"><a href="/">Home</a></li>
-       <!-- <li class="navBarElement"><a href="/plants">Plants</a></li>
+        <li class="navBarElement"><a href="/plants">Plants</a></li>
         <li class="navBarElement"><a href="/guides">Guides</a></li>
         <li class="navBarElement"><a href="/login">User</a></li>
-        <li class="navBarElement"><a href="/experts">For Experts</a></li> -->
+        <li class="navBarElement"><a href="/experts">For Experts</a></li>
         <li class="navBarElement"><a href="/admins">DB Admin</a></li>
     </ul>
-</div>
+</div> -->
 
-<br>
-
-<div class="explanation">
-    <p>
-        This page is used to edit the database as if you were an admin. Each table will be accessible by just clicking on the
-        buttons to see the contents of each table in the database. Each table is listed as a button here.
-    </p>
-</div>
-
-<br>
 
 <div class="buttons">
+    <button onclick="location.href='/'"" type="button">
+        Home
+    </button>
+
     <button onclick="location.href='/admins/users'" type="button">
         Users
     </button>
+
     <button onclick="location.href='/admins/plants'" type="button">
         Plants
     </button>
+
     <button onclick="location.href='/admins/care'" type="button">
         Care
     </button>
+
     <button onclick="location.href='/admins/guides'" type="button">
         Guides
     </button>
+
     <button onclick="location.href='/admins/experts'" type="button">
         Experts
     </button>
+
     <button onclick="location.href='/admins/plantsowned'" type="button">
         PlantsOwned
     </button>
+
     <button onclick="location.href='/admins/userexperts'" type="button">
         UserExperts
     </button>

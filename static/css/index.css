@@ -1,3 +1,22 @@
 .text {
     text-align: center;
 }
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    align-content: center;
+    background-color: #32CD32;
+    width: 200px;
+    font-size: 24px;
+    color: white;
+}
+
+button:hover {
+	background-color: #09a4a4;
+	width: 210px;
+}

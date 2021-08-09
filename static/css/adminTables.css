@@ -8,3 +8,21 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
+.addUser {
+	margin: auto;
+	width: 50%;
+	border: 3px solid green;
+	padding: 10px;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.tableContainer {
+	margin: auto;
+	width: 50%;
+	border: 3px solid green;
+	padding: 10px;
+	text-align: center;
+	font-family: sans-serif;
+}
