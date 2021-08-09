@@ -353,7 +353,7 @@ def adminsexperts():
 
             return redirect('/admins/experts')
 
-            # POST to DELETE a row
+        # POST to DELETE a row
         elif request.form['function'] == 'delete':
             id = request.form['id']
             delete_query = f"DELETE FROM `Experts` WHERE expertID = '{id}'"
@@ -367,74 +367,98 @@ def adminsexperts():
 
 
 @app.route('/admins/plantsowned', methods=['GET', 'POST'])
-# @app.route('/admins/plantsowned/update_po', methods=['GET', 'POST'])
+@app.route('/admins/plantsowned/update_po', methods=['GET', 'POST'])
 def adminspo():
-    # if request.method == 'POST':
-    #
-    #     # POST to get the current information for placeholders in form
-    #     if request.form['function'] == 'edit':
-    #         id = request.form['id']
-    #         select_query = f"SELECT * FROM `Experts` WHERE expertID='{id}'"
-    #         select_data = database_query(select_query)
-    #         return render_template('admExpertsUpdate.html', data=select_data)
-    #
-    #     # POST to send UPDATE query to DB
-    #     elif request.form['function'] == 'update':
-    #         id = request.form['id']
-    #         name = request.form['name'] or None
-    #         desc = request.form['description'] or None
-    #
-    #         update_query = "UPDATE `Experts` SET tagName = %s, tagDescription = %s WHERE expertID = %s"
-    #         args = (name, desc, id)
-    #         database_query(update_query, args)
-    #
-    #         return redirect('/admins/experts')
-    #
-    #     # POST to DELETE a row
-    #     elif request.form['function'] == 'delete':
-    #         id = request.form['id']
-    #         delete_query = f"DELETE FROM `Experts` WHERE expertID = '{id}'"
-    #         database_query(delete_query)
-    #         return redirect('/admins/experts')
-    #
-    # # Default GET table to be displayed
+    if request.method == 'POST':
+
+        # POST to get the current information for placeholders in form
+        if request.form['function'] == 'edit':
+            id = request.form['id']
+            id2 = request.form['id2']
+            select_query = f"SELECT * FROM `PlantsOwned` WHERE userId='{id}' AND plantID='{id2}'"
+            select_data = database_query(select_query)
+            return render_template('admPOUpdate.html', data=select_data)
+
+        # POST to send UPDATE query to DB
+        elif request.form['function'] == 'update':
+            id = request.form['id']
+            id2 = request.form['id2']
+            userid = request.form['userId']
+            plantid = request.form['plantId']
+
+            update_query = "UPDATE `PlantsOwned` SET userID = %s, plantID = %s WHERE userID = %s AND plantID = %s"
+            args = (userid, plantid, id, id2)
+            database_query(update_query, args)
+
+            return redirect('/admins/plantsowned')
+
+        # POST to DELETE a row
+        elif request.form['function'] == 'delete':
+            id = request.form['id']
+            id2 = request.form['id2']
+            delete_query = f"DELETE FROM `PlantsOwned` WHERE userID = '{id}' AND plantID='{id2}'"
+            database_query(delete_query)
+            return redirect('/admins/plantsowned')
+
+        # POST to INSERT a row
+        elif request.form['function'] == 'insert':
+            userid = request.form['userId']
+            plantid = request.form['plantId']
+            insert_query = "INSERT INTO `PlantsOwned` (userID, plantID) VALUES (%s, %s)"
+            args = (userid, plantid)
+            database_query(insert_query, args)
+            return redirect('/admins/plantsowned')
+
+    # Default GET table to be displayed
     query = "SELECT * FROM `PlantsOwned`"
     data = database_query(query)
     return render_template('adminpo.html', data=data)
 
 
 @app.route('/admins/userexperts', methods=['GET', 'POST'])
-# @app.route('/admins/userexperts/update_ue', methods=['GET', 'POST'])
+@app.route('/admins/userexperts/update_ue', methods=['GET', 'POST'])
 def adminsue():
-    # if request.method == 'POST':
-    #
-    #     # POST to get the current information for placeholders in form
-    #     if request.form['function'] == 'edit':
-    #         id = request.form['id']
-    #         select_query = f"SELECT * FROM `Experts` WHERE expertID='{id}'"
-    #         select_data = database_query(select_query)
-    #         return render_template('admExpertsUpdate.html', data=select_data)
-    #
-    #     # POST to send UPDATE query to DB
-    #     elif request.form['function'] == 'update':
-    #         id = request.form['id']
-    #         name = request.form['name'] or None
-    #         desc = request.form['description'] or None
-    #
-    #         update_query = "UPDATE `Experts` SET tagName = %s, tagDescription = %s WHERE expertID = %s"
-    #         args = (name, desc, id)
-    #         database_query(update_query, args)
-    #
-    #         return redirect('/admins/experts')
-    #
-    #         # POST to DELETE a row
-    #     elif request.form['function'] == 'delete':
-    #         id = request.form['id']
-    #         delete_query = f"DELETE FROM `Experts` WHERE expertID = '{id}'"
-    #         database_query(delete_query)
-    #         return redirect('/admins/experts')
-    #
-    # # Default GET table to be displayed
+    if request.method == 'POST':
+
+        # POST to get the current information for placeholders in form
+        if request.form['function'] == 'edit':
+            id = request.form['id']
+            id2 = request.form['id2']
+            select_query = f"SELECT * FROM `UserExpert` WHERE userId='{id}' AND expertID='{id2}'"
+            select_data = database_query(select_query)
+            return render_template('admUEUpdate.html', data=select_data)
+
+        # POST to send UPDATE query to DB
+        elif request.form['function'] == 'update':
+            id = request.form['id']
+            id2 = request.form['id2']
+            userid = request.form['userId']
+            expertid = request.form['expertId']
+
+            update_query = "UPDATE `UserExpert` SET userID = %s, expertID = %s WHERE userID = %s AND expertID = %s"
+            args = (userid, expertid, id, id2)
+            database_query(update_query, args)
+
+            return redirect('/admins/userexperts')
+
+        # POST to DELETE a row
+        elif request.form['function'] == 'delete':
+            id = request.form['id']
+            id2 = request.form['id2']
+            delete_query = f"DELETE FROM `UserExpert` WHERE userID = '{id}' AND expertID='{id2}'"
+            database_query(delete_query)
+            return redirect('/admins/userexperts')
+
+        # POST to INSERT a row
+        elif request.form['function'] == 'insert':
+            userid = request.form['userId']
+            expertid = request.form['expertId']
+            insert_query = "INSERT INTO `UserExpert` (userID, expertID) VALUES (%s, %s)"
+            args = (userid, expertid)
+            database_query(insert_query, args)
+            return redirect('/admins/userexperts')
+
+    # Default GET table to be displayed
     query = "SELECT * FROM `UserExpert`"
     data = database_query(query)
     return render_template('adminue.html', data=data)

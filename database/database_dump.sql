@@ -1,4 +1,5 @@
 -- Users Table
+DROP TABLE IF EXISTS `Users`;
 CREATE TABLE Users (
 userID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 first varchar(255) NOT NULL,
@@ -9,6 +10,7 @@ picture varbinary(8000)
 );
 
 -- Experts Table
+DROP TABLE IF EXISTS `Experts`;
 CREATE TABLE Experts (
 expertID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 tagName varchar(255) NOT NULL,
@@ -16,6 +18,7 @@ tagDescription varchar(255) NOT NULL
 );
 
 -- Care Table
+DROP TABLE IF EXISTS `Care`;
 CREATE TABLE Care (
 careID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 water varchar(255) NOT NULL,
@@ -27,6 +30,7 @@ soil varchar(255)
 );
 
 -- Plants Table
+DROP TABLE IF EXISTS `Plants`;
 CREATE TABLE Plants (
 plantID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 commonName varchar(255) NOT NULL,
@@ -42,6 +46,7 @@ FOREIGN KEY (careID) REFERENCES Care(careID)
 );
 
 -- Guides Table
+DROP TABLE IF EXISTS `Guides`;
 CREATE TABLE Guides (
 guideID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 title varchar(255) NOT NULL,
@@ -54,20 +59,22 @@ FOREIGN KEY (userID) REFERENCES Users(userID)
 );
 
 -- PlantsOwned Table
+DROP TABLE IF EXISTS `PlantsOwned`;
 CREATE TABLE PlantsOwned (
 userID int NOT NULL,
 plantID int NOT NULL,
 FOREIGN KEY (userID) REFERENCES Users(userID),
-FOREIGN KEY (plantID) REFERENCES Plants(plantID)
+FOREIGN KEY (plantID) REFERENCES Plants(plantID),
 PRIMARY KEY (userID, plantID)
 );
 
 -- UserExpert Table
+DROP TABLE IF EXISTS `UserExpert`;
 CREATE TABLE UserExpert (
 userID int NOT NULL,
 expertID int NOT NULL,
 FOREIGN KEY (userID) REFERENCES Users (userID),
-FOREIGN KEY (expertID) REFERENCES Experts (expertID)
+FOREIGN KEY (expertID) REFERENCES Experts (expertID),
 PRIMARY KEY (userID, expertID)
 );
 
