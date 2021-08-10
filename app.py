@@ -71,11 +71,6 @@ def insertPlants():
     return redirect('/admins/plants')
 
 
-@app.route('/care')
-def care():
-    return render_template('care.html')
-
-
 @app.route('/care/insertCare', methods=['POST'])
 def insert_care():
     water = request.form['water']
@@ -88,18 +83,6 @@ def insert_care():
     args = (water, light, temperature, humidity, fertilizer, soil)
     database_query(insert_query, args)
     return redirect('/admins/care')
-
-
-@app.route('/guides')
-def guides():
-    query = "SELECT * FROM `Guides`"
-    guide_data = database_query(query)
-    return render_template('guides.html', data=guide_data)
-
-
-@app.route('/guides/create')
-def create_guide():
-    return render_template('createGuide.html')
 
 
 @app.route('/guides/create/insert_guide', methods = ['POST'])
@@ -118,21 +101,6 @@ def insert_guide():
     return redirect('/admins/guides')
 
 
-@app.route('/guides/example')
-def example_guide():
-    return render_template('exampleGuide.html')
-
-
-@app.route('/login')
-def users_login():
-    return render_template('usersLogin.html')
-
-
-@app.route('/users')
-def users():
-    return render_template('users.html')
-
-
 @app.route('/users/insertUsers', methods= ['POST'])
 def insertUsers():
     first = request.form['firstName']
@@ -145,16 +113,6 @@ def insertUsers():
     return redirect('/admins/users')
 
 
-@app.route('/register')
-def register():
-    return render_template('registerUser.html')
-
-
-@app.route('/experts')
-def experts():
-    return render_template('experts.html')
-
-
 @app.route('/experts/insertExperts', methods= ['POST'])
 def insertExperts():
     tagName = request.form['type']
@@ -163,11 +121,6 @@ def insertExperts():
     args = (tagName, tagDescription)
     database_query(insert_query, args)
     return redirect('/admins/experts')
-
-
-@app.route('/admins')
-def admins():
-    return render_template('admins.html')
 
 
 @app.route('/admins/users', methods=['GET', 'POST'])
