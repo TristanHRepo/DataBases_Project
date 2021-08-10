@@ -17,11 +17,20 @@
         <label for="description">Description:</label>
         <input type="text" id="description" name="description" required><br>
 
-        <label for="plantID">plantID:</label>
-        <input type="number" id="plantID" name="plantID"><br>
+        <label for="plantID">Plant (optional):</label>
+        <select id="plantID" name="plantID">
+            <option value="Null">None</option>
+            {% for plant in plants %}
+            <option value="{{plant[0]}}">{{plant[1]}}</option>
+            {% endfor %}
+        </select><br>
 
-        <label for="userID">userID:</label>
-        <input type="number" id="userID" name="userID"><br>
+        <label for="userID">User:</label>
+        <select id="userID" name="userID" required>
+            {% for user in users %}
+            <option value="{{user[0]}}">{{user[1]}} {{user[2]}}</option>
+            {% endfor %}
+        </select><br>
 
         <input type="submit" value="Submit">
     </form>

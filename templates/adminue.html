@@ -8,10 +8,18 @@
     <form method="post">
         <h2>Add an Expert Tag For a User</h2>
         <label for="userId">User ID:</label>
-        <input type="text" id="userId" name="userId" value="" required>
+        <select id="userId" name="userId" required>
+            {% for user in users %}
+            <option value="{{user[0]}}">{{user[1]}} {{user[2]}}</option>
+            {% endfor %}
+        </select>
 
         <label for="expertId">Expert ID:</label>
-        <input type="text" id="expertId" name="expertId" value="" required>
+        <select id="expertId" name="expertId" required>
+            {% for expert in experts %}
+            <option value="{{expert[0]}}">{{expert[1]}}</option>
+            {% endfor %}
+        </select>
 
         <input type="submit" name="function" value="insert">
     </form>

@@ -16,17 +16,20 @@ mysql.init_app(app)
 
 def database_query(query, args=None):
     """Queries the database for the specified query and returns raw data sent from database."""
-    conn = mysql.connect()
-    cursor = conn.cursor()
-    if args is None:
-        cursor.execute(query)
-    else:
-        cursor.execute(query, args)
-    conn.commit()
-    data = cursor.fetchall()
-    cursor.close()
-    conn.close()
-    return data
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        if args is None:
+            cursor.execute(query)
+        else:
+            cursor.execute(query, args)
+        conn.commit()
+        data = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        return data
+    except:
+        return "yup it didn't work"
 
 
 @app.route('/')
@@ -51,6 +54,7 @@ def plants():
         plant_data = database_query(query)
         return render_template('adminplants.html', data=plant_data)
 
+
 @app.route('/plants/insertPlants', methods=["POST"])
 def insertPlants():
     common = request.form['commonName']
@@ -70,6 +74,7 @@ def insertPlants():
 @app.route('/care')
 def care():
     return render_template('care.html')
+
 
 @app.route('/care/insertCare', methods=['POST'])
 def insert_care():
@@ -102,13 +107,15 @@ def insert_guide():
     title = request.form['Title']
     link = request.form['videoLink'] or None
     description = request.form['description']
-    plantid = request.form['plantID'] or None
+    if request.form['plantID'] == 'Null':
+        plantid = None
+    else:
+        plantid = request.form['plantID']
     userid = request.form['userID']
     insert_query = "INSERT INTO `Guides` (title, video, description, plantID, userID) VALUES (%s, %s, %s, %s, %s)"
     args = (title, link, description, plantid, userid)
     database_query(insert_query, args)
     return redirect('/admins/guides')
-
 
 
 @app.route('/guides/example')
@@ -125,6 +132,7 @@ def users_login():
 def users():
     return render_template('users.html')
 
+
 @app.route('/users/insertUsers', methods= ['POST'])
 def insertUsers():
     first = request.form['firstName']
@@ -137,7 +145,6 @@ def insertUsers():
     return redirect('/admins/users')
 
 
-
 @app.route('/register')
 def register():
     return render_template('registerUser.html')
@@ -147,6 +154,7 @@ def register():
 def experts():
     return render_template('experts.html')
 
+
 @app.route('/experts/insertExperts', methods= ['POST'])
 def insertExperts():
     tagName = request.form['type']
@@ -155,6 +163,7 @@ def insertExperts():
     args = (tagName, tagDescription)
     database_query(insert_query, args)
     return redirect('/admins/experts')
+
 
 @app.route('/admins')
 def admins():
@@ -242,10 +251,14 @@ def adminsplants():
             database_query(delete_query)
             return redirect('/admins/plants')
 
+    # Query for drop down menu items
+    care_query = "SELECT careID FROM `Care`"
+    care_data = database_query(care_query)
+
     # Default GET table to be displayed
     query = "SELECT * FROM `Plants`"
     data = database_query(query)
-    return render_template('adminplants.html', data=data)
+    return render_template('adminplants.html', data=data, cares=care_data)
 
 
 @app.route('/admins/care', methods=['GET', 'POST'])
@@ -288,6 +301,7 @@ def adminscare():
     data = database_query(query)
     return render_template('admincare.html', data=data)
 
+
 @app.route('/admins/guides', methods=['GET', 'POST'])
 @app.route('/admins/guides/update_guide', methods=['GET', 'POST'])
 def adminsguides():
@@ -323,10 +337,17 @@ def adminsguides():
             database_query(delete_query)
             return redirect('/admins/guides')
 
+    # Queries for drop down menu items
+    user_query = "SELECT userID, first, last FROM `Users`"
+    user_data = database_query(user_query)
+
+    plant_query = "SELECT plantID, commonName FROM `Plants`"
+    plant_data = database_query(plant_query)
+
     # Default GET table to be displayed
     query = "SELECT * FROM `Guides`"
     data = database_query(query)
-    return render_template('adminguides.html', data=data)
+    return render_template('adminguides.html', data=data, users=user_data, plants=plant_data)
 
 
 @app.route('/admins/experts', methods=['GET', 'POST'])
@@ -409,10 +430,17 @@ def adminspo():
             database_query(insert_query, args)
             return redirect('/admins/plantsowned')
 
+    # Queries for drop down menu items
+    user_query = "SELECT userID, first, last FROM `Users`"
+    user_data = database_query(user_query)
+
+    plant_query = "SELECT plantID, commonName FROM `Plants`"
+    plant_data = database_query(plant_query)
+
     # Default GET table to be displayed
     query = "SELECT * FROM `PlantsOwned`"
     data = database_query(query)
-    return render_template('adminpo.html', data=data)
+    return render_template('adminpo.html', data=data, users=user_data, plants=plant_data)
 
 
 @app.route('/admins/userexperts', methods=['GET', 'POST'])
@@ -434,7 +462,6 @@ def adminsue():
             id2 = request.form['id2']
             userid = request.form['userId']
             expertid = request.form['expertId']
-
             update_query = "UPDATE `UserExpert` SET userID = %s, expertID = %s WHERE userID = %s AND expertID = %s"
             args = (userid, expertid, id, id2)
             database_query(update_query, args)
@@ -458,10 +485,17 @@ def adminsue():
             database_query(insert_query, args)
             return redirect('/admins/userexperts')
 
+    # Queries for drop down menu items
+    user_query = "SELECT userID, first, last FROM `Users`"
+    user_data = database_query(user_query)
+
+    expert_query = "SELECT expertID, tagName FROM `Experts`"
+    expert_data = database_query(expert_query)
+
     # Default GET table to be displayed
     query = "SELECT * FROM `UserExpert`"
     data = database_query(query)
-    return render_template('adminue.html', data=data)
+    return render_template('adminue.html', data=data, users=user_data, experts=expert_data)
 
 
 if __name__ == "__main__":

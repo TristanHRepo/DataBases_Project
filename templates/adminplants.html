@@ -37,8 +37,12 @@
         <label for="maxSize">Max Size:</label><br>
         <input type="text" id="maxSize" name="maxSize"><br>
 
-        <label for="careID">CareID:</label><br>
-        <input type="number" id="careID" name="careID"><br>
+        <label for="careID">Care Plan:</label><br>
+        <select id="careID" name="careID" required>
+            {% for care in cares %}
+            <option value="{{care[0]}}">{{care[0]}}</option>
+            {% endfor %}
+        </select><br>
         
         <br>
         
