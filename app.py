@@ -16,20 +16,18 @@ mysql.init_app(app)
 
 def database_query(query, args=None):
     """Queries the database for the specified query and returns raw data sent from database."""
-    try:
-        conn = mysql.connect()
-        cursor = conn.cursor()
-        if args is None:
-            cursor.execute(query)
-        else:
-            cursor.execute(query, args)
-        conn.commit()
-        data = cursor.fetchall()
-        cursor.close()
-        conn.close()
-        return data
-    except:
-        return "yup it didn't work"
+
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    if args is None:
+        cursor.execute(query)
+    else:
+        cursor.execute(query, args)
+    conn.commit()
+    data = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return data
 
 
 @app.route('/')
