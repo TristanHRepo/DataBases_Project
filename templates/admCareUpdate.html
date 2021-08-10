@@ -1,30 +1,32 @@
 {% extends "admins.html" %}
 {% block styling %}
-    <link rel="stylesheet" href="/static/css/adminTables.css">
+    <link rel="stylesheet" href="/static/css/updatesPages.css">
 {% endblock styling %}
 {% block content %}
     <h1>UPDATE INFORMATION FOR CARE ID:{{data[0][0]}}</h1>
-    <form method="post">
-        <input type="hidden" name="id" value="{{data[0][0]}}">
+    <div class="formContainer">
+        <form method="post" class="updateForm">
+            <input type="hidden" name="id" value="{{data[0][0]}}">
 
-        <label for="water">Water:</label>
-        <input type="text" id="water" name="water" value="{{data[0][1]}}" required>
+            <label for="water">Water:</label>
+            <input type="text" id="water" name="water" value="{{data[0][1]}}" required><br>
 
-        <label for="light">Light:</label>
-        <input type="text" id="light" name="light" value="{{data[0][2]}}" required>
+            <label for="light">Light:</label>
+            <input type="text" id="light" name="light" value="{{data[0][2]}}" required><br>
 
-        <label for="temp">Temp:</label>
-        <input type="number" id="temp" name="temp" value="{{data[0][3]}}" required>
+            <label for="temp">Temp:</label>
+            <input type="number" id="temp" name="temp" value="{{data[0][3]}}" required><br>
 
-        <label for="humidity">Humidity:</label>
-        <input type="text" id="humidity" name="humidity" value="{{data[0][4]}}">
+            <label for="humidity">Humidity:</label>
+            <input type="text" id="humidity" name="humidity" value="{{data[0][4]}}"><br>
 
-        <label for="fert">Fertilizer:</label>
-        <input type="text" id="fert" name="fert" value="{{data[0][5]}}">
+            <label for="fert">Fertilizer:</label>
+            <input type="text" id="fert" name="fert" value="{{data[0][5]}}"><br>
 
-        <label for="soil">Soil:</label>
-        <input type="text" id="soil" name="soil" value="{{data[0][6]}}">
+            <label for="soil">Soil:</label>
+            <input type="text" id="soil" name="soil" value="{{data[0][6]}}"><br>
 
-        <input type="submit" name="function" value="update">
-    </form>
+            <input type="submit" name="function" value="update"><br>
+        </form>
+    </div>
 {% endblock content %}

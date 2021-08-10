@@ -1,30 +1,32 @@
 {% extends "admins.html" %}
 {% block styling %}
-    <link rel="stylesheet" href="/static/css/adminTables.css">
+    <link rel="stylesheet" href="/static/css/updatesPages.css">
 {% endblock styling %}
 {% block content %}
-    <h1>UPDATE INFORMATION FOR USER ID:{{data[0][0]}} EXPERT ID: {{data[0][1]}}</h1>
-    <form method="post">
-        <input type="hidden" name="id" value="{{data[0][0]}}">
-        <input type="hidden" name="id2" value="{{data[0][1]}}">
+    <h1>UPDATE INFORMATION FOR USER ID:{{data[0][0]}} | EXPERT ID: {{data[0][1]}}</h1>
+    <div class="formContainer">
+        <form method="post" class="updateForm">
+            <input type="hidden" name="id" value="{{data[0][0]}}">
+            <input type="hidden" name="id2" value="{{data[0][1]}}">
 
-        <label for="userId">User ID:</label>
-        <select id="userId" name="userId" required>
-            <option value="{{data[0][0]}}" selected style="background-color: yellow">{{data[0][0]}}</option>
-            {% for user in users %}
-            <option value="{{user[0]}}">{{user[1]}} {{user[2]}}</option>
-            {% endfor %}
-        </select>
+            <label for="userId">User ID:</label>
+            <select id="userId" name="userId" required>
+                <option value="{{data[0][0]}}" selected style="background-color: yellow">{{data[0][0]}}</option>
+                {% for user in users %}
+                <option value="{{user[0]}}">{{user[1]}} {{user[2]}}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="expertId">Expert ID:</label>
-         <select id="expertId" name="expertId" required>
-             <option value="{{data[0][1]}}" selected style="background-color: yellow">{{data[0][1]}}</option>
-            {% for expert in experts %}
-            <option value="{{expert[0]}}">{{expert[1]}}</option>
-            {% endfor %}
-        </select>
+            <label for="expertId">Expert ID:</label>
+             <select id="expertId" name="expertId" required>
+                 <option value="{{data[0][1]}}" selected style="background-color: yellow">{{data[0][1]}}</option>
+                {% for expert in experts %}
+                <option value="{{expert[0]}}">{{expert[1]}}</option>
+                {% endfor %}
+            </select><br>
 
 
-        <input type="submit" name="function" value="update">
-    </form>
+            <input type="submit" name="function" value="update">
+        </form>
+    </div>
 {% endblock content %}

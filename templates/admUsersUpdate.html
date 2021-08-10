@@ -1,24 +1,26 @@
 {% extends "admins.html" %}
 {% block styling %}
-    <link rel="stylesheet" href="/static/css/adminTables.css">
+    <link rel="stylesheet" href="/static/css/updatesPages.css">
 {% endblock styling %}
 {% block content %}
     <h1>UPDATE INFORMATION FOR USER ID:{{data[0][0]}}</h1>
-    <form method="post">
-        <input type="hidden" name="id" value="{{data[0][0]}}">
+    <div class="formContainer">
+        <form method="post" class="updateForm">
+            <input type="hidden" name="id" value="{{data[0][0]}}">
 
-        <label for="first">First Name:</label>
-        <input type="text" id="first" name="first" value="{{data[0][1]}}" required>
+            <label for="first">First Name:</label>
+            <input type="text" id="first" name="first" value="{{data[0][1]}}" required><br>
 
-        <label for="last">Last Name:</label>
-        <input type="text" id="last" name="last" value="{{data[0][2]}}" required>
+            <label for="last">Last Name:</label>
+            <input type="text" id="last" name="last" value="{{data[0][2]}}" required><br>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="{{data[0][3]}}" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{data[0][3]}}" required><br>
 
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" value="{{data[0][4]}}">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" value="{{data[0][4]}}"><br>
 
-        <input type="submit" name="function" value="update">
-    </form>
+            <input type="submit" name="function" value="update">
+        </form>
+    </div>
 {% endblock content %}

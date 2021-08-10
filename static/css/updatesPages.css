@@ -1,0 +1,41 @@
+* {
+    font-family: sans-serif;
+}
+
+h1 {
+      text-align: center;
+}
+
+.formContainer {
+    align: center;
+    margin: auto;
+	width: 30%;
+	border: 3px solid green;
+	padding: 10px;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.updateForm {
+    margin: auto;
+}
+
+form {
+    margin: auto;
+}
+
+input {
+  width: 100%;
+  margin: 4px 2px;
+}
+
+select {
+    margin: 4px 2px;
+}
+
+input[type=submit] {
+    width: 25%;
+}
+
+
+

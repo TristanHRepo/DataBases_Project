@@ -1,18 +1,20 @@
 {% extends "admins.html" %}
 {% block styling %}
-    <link rel="stylesheet" href="/static/css/adminTables.css">
+    <link rel="stylesheet" href="/static/css/updatesPages.css">
 {% endblock styling %}
 {% block content %}
     <h1>UPDATE INFORMATION FOR EXPERTS ID:{{data[0][0]}}</h1>
-    <form method="post">
-        <input type="hidden" name="id" value="{{data[0][0]}}">
+    <div class="formContainer">
+        <form method="post" class="updateForm">
+            <input type="hidden" name="id" value="{{data[0][0]}}">
 
-        <label for="name">Type of Expert:</label>
-        <input type="text" id="name" name="name" value="{{data[0][1]}}" required>
+            <label for="name">Type of Expert:</label>
+            <input type="text" id="name" name="name" value="{{data[0][1]}}" required><br>
 
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" value="{{data[0][2]}}" required>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" value="{{data[0][2]}}" required><br>
 
-        <input type="submit" name="function" value="update">
-    </form>
+            <input type="submit" name="function" value="update">
+        </form>
+    </div>
 {% endblock content %}

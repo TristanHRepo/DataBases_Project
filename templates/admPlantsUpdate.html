@@ -1,47 +1,49 @@
 {% extends "admins.html" %}
 {% block styling %}
-    <link rel="stylesheet" href="/static/css/adminTables.css">
+    <link rel="stylesheet" href="/static/css/updatesPages.css">
 {% endblock styling %}
 {% block content %}
     <h1>UPDATE INFORMATION FOR PLANT ID:{{data[0][0]}}</h1>
-    <form method="post">
-        <input type="hidden" name="id" value="{{data[0][0]}}">
+    <div class="formContainer">
+        <form method="post" class="updateForm">
+            <input type="hidden" name="id" value="{{data[0][0]}}">
 
-        <label for="commonName">Common Name:</label>
-        <input type="text" id="commonName" name="commonName" value="{{data[0][1]}}" required>
+            <label for="commonName">Common Name:</label>
+            <input type="text" id="commonName" name="commonName" value="{{data[0][1]}}" required><br>
 
-        <label for="scienceName">Scientific Name:</label>
-        <input type="text" id="scienceName" name="scienceName" value="{{data[0][2]}}">
+            <label for="scienceName">Scientific Name:</label>
+            <input type="text" id="scienceName" name="scienceName" value="{{data[0][2]}}"><br>
 
-        <label for="type">Type:</label>
-        <input type="text" id="type" name="type" value="{{data[0][3]}}">
+            <label for="type">Type:</label>
+            <input type="text" id="type" name="type" value="{{data[0][3]}}"><br>
 
-        <label for="color">Color:</label>
-        <input type="text" id="color" name="color" value="{{data[0][4]}}">
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" value="{{data[0][4]}}"><br>
 
-        <label for="variegated">Variegated:</label>
-        <select id="variegated" name="variegated">
-          <option value="0">No</option>
-          <option value="1">Yes</option>
-        </select>
+            <label for="variegated">Variegated:</label>
+            <select id="variegated" name="variegated">
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select><br>
 
-        <label for="petSafe">Pet Safe?:</label>
-        <select id="petSafe" name="petSafe">
-          <option value="0">No</option>
-          <option value="1">Yes</option>
-        </select>
+            <label for="petSafe">Pet Safe?:</label>
+            <select id="petSafe" name="petSafe">
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select><br>
 
-        <label for="maxSize">Maximum Size:</label>
-        <input type="text" id="maxSize" name="maxSize" value="{{data[0][7]}}">
+            <label for="maxSize">Maximum Size:</label>
+            <input type="text" id="maxSize" name="maxSize" value="{{data[0][7]}}"><br>
 
-        <label for="careID">Care ID:</label>
-        <select id="careID" name="careID" required>
-            <option value="{{data[0][8]}}" selected style="background-color: yellow">{{data[0][8]}}</option>
-            {% for care in cares %}
-            <option value="{{care[0]}}">{{care[0]}}</option>
-            {% endfor %}
-        </select>
+            <label for="careID">Care ID:</label>
+            <select id="careID" name="careID" required>
+                <option value="{{data[0][8]}}" selected style="background-color: yellow">{{data[0][8]}}</option>
+                {% for care in cares %}
+                <option value="{{care[0]}}">{{care[0]}}</option>
+                {% endfor %}
+            </select><br>
 
-        <input type="submit" name="function" value="update">
-    </form>
+            <input type="submit" name="function" value="update">
+        </form>
+    </div>
 {% endblock content %}
