@@ -9,10 +9,20 @@
         <input type="hidden" name="id2" value="{{data[0][1]}}">
 
         <label for="userId">User ID:</label>
-        <input type="text" id="userId" name="userId" value="{{data[0][0]}}" required>
+        <select id="userId" name="userId" required>
+            <option value="{{data[0][0]}}" selected style="background-color: yellow">{{data[0][0]}}</option>
+            {% for user in users %}
+            <option value="{{user[0]}}">{{user[1]}} {{user[2]}}</option>
+            {% endfor %}
+        </select>
 
         <label for="plantId">Plant ID:</label>
-        <input type="text" id="plantId" name="plantId" value="{{data[0][1]}}" required>
+        <select id="plantId" name="plantId" required>
+            <option value="{{data[0][1]}}" selected style="background-color: yellow">{{data[0][1]}}</option>
+            {% for plant in plants %}
+            <option value="{{plant[0]}}">{{plant[1]}}</option>
+            {% endfor %}
+        </select>
 
         <input type="submit" name="function" value="update">
     </form>

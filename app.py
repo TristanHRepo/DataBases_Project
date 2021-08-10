@@ -142,11 +142,10 @@ def adminsusers():
             last = request.form['last']
             email = request.form['email']
             location = request.form['location'] or None
-            pic = request.form['picture'] or None
 
-            update_query = "UPDATE `Users` SET first = %s, last = %s, email = %s, location = %s, picture = %s " \
+            update_query = "UPDATE `Users` SET first = %s, last = %s, email = %s, location = %s" \
                            "WHERE userID = %s"
-            args = (first, last, email, location, pic, id)
+            args = (first, last, email, location, id)
             database_query(update_query, args)
 
             return redirect('/admins/users')
@@ -174,7 +173,11 @@ def adminsplants():
             id = request.form['id']
             select_query = f"SELECT * FROM `Plants` WHERE plantID='{id}'"
             select_data = database_query(select_query)
-            return render_template('admPlantsUpdate.html', data=select_data)
+
+            # Query for drop down menu items
+            care_query = "SELECT careID FROM `Care`"
+            care_data = database_query(care_query)
+            return render_template('admPlantsUpdate.html', data=select_data, cares=care_data)
 
         # POST to send UPDATE query to DB
         elif request.form['function'] == 'update':
@@ -186,13 +189,12 @@ def adminsplants():
             vari = request.form['variegated']
             pets = request.form['petSafe']
             size = request.form['maxSize'] or None
-            pic = request.form['picture'] or None
             careId = request.form['careID'] or None
 
             update_query = "UPDATE `Plants` SET commonName = %s, scienceName = %s, type = %s, color = %s, " \
-                           "variegated = %s, petSafe = %s, maxSize = %s,  picture = %s, careID = %s  " \
+                           "variegated = %s, petSafe = %s, maxSize = %s, careID = %s " \
                            "WHERE plantID = %s"
-            args = (comId, sciId, type, color, vari, pets, size, pic, careId, id)
+            args = (comId, sciId, type, color, vari, pets, size, careId, id)
             database_query(update_query, args)
 
             return redirect('/admins/plants')
@@ -265,7 +267,12 @@ def adminsguides():
             id = request.form['id']
             select_query = f"SELECT * FROM `Guides` WHERE guideID='{id}'"
             select_data = database_query(select_query)
-            return render_template('admGuidesUpdate.html', data=select_data)
+            # Queries for drop down menu items
+            user_query = "SELECT userID, first, last FROM `Users`"
+            user_data = database_query(user_query)
+            plant_query = "SELECT plantID, commonName FROM `Plants`"
+            plant_data = database_query(plant_query)
+            return render_template('admGuidesUpdate.html', data=select_data, users=user_data, plants=plant_data)
 
         # POST to send UPDATE query to DB
         elif request.form['function'] == 'update':
@@ -273,10 +280,11 @@ def adminsguides():
             title = request.form['title']
             video = request.form['video'] or None
             desc = request.form['desc']
-            plantid = request.form['plantid'] or None
+            if request.form['plantID'] == 'Null':
+                plantid = None
+            else:
+                plantid = request.form['plantID']
             userid = request.form['userid']
-
-
             update_query = f"UPDATE `Guides` SET title = %s, video = %s, description = %s, plantid = CAST(%s AS int), " \
                            f"userid = CAST(%s AS int) WHERE guideID = %s"
             args = (title, video, desc, plantid, userid, id)
@@ -293,7 +301,6 @@ def adminsguides():
     # Queries for drop down menu items
     user_query = "SELECT userID, first, last FROM `Users`"
     user_data = database_query(user_query)
-
     plant_query = "SELECT plantID, commonName FROM `Plants`"
     plant_data = database_query(plant_query)
 
@@ -351,7 +358,12 @@ def adminspo():
             id2 = request.form['id2']
             select_query = f"SELECT * FROM `PlantsOwned` WHERE userId='{id}' AND plantID='{id2}'"
             select_data = database_query(select_query)
-            return render_template('admPOUpdate.html', data=select_data)
+            # Queries for drop down menu items
+            user_query = "SELECT userID, first, last FROM `Users`"
+            user_data = database_query(user_query)
+            plant_query = "SELECT plantID, commonName FROM `Plants`"
+            plant_data = database_query(plant_query)
+            return render_template('admPOUpdate.html', data=select_data, users=user_data, plants=plant_data)
 
         # POST to send UPDATE query to DB
         elif request.form['function'] == 'update':
@@ -407,7 +419,12 @@ def adminsue():
             id2 = request.form['id2']
             select_query = f"SELECT * FROM `UserExpert` WHERE userId='{id}' AND expertID='{id2}'"
             select_data = database_query(select_query)
-            return render_template('admUEUpdate.html', data=select_data)
+            # Queries for drop down menu items
+            user_query = "SELECT userID, first, last FROM `Users`"
+            user_data = database_query(user_query)
+            expert_query = "SELECT expertID, tagName FROM `Experts`"
+            expert_data = database_query(expert_query)
+            return render_template('admUEUpdate.html', data=select_data, users=user_data, experts=expert_data)
 
         # POST to send UPDATE query to DB
         elif request.form['function'] == 'update':

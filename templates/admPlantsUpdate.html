@@ -34,11 +34,13 @@
         <label for="maxSize">Maximum Size:</label>
         <input type="text" id="maxSize" name="maxSize" value="{{data[0][7]}}">
 
-        <label for="picture">Picture:</label>
-        <input type="file" id="picture" name="picture" value="{{data[0][8]}}" accept=".jpg, .jpeg, .png, .image/*">
-
         <label for="careID">Care ID:</label>
-        <input type="text" id="careID" name="careID" value="{{data[0][9]}}">
+        <select id="careID" name="careID" required>
+            <option value="{{data[0][8]}}" selected style="background-color: yellow">{{data[0][8]}}</option>
+            {% for care in cares %}
+            <option value="{{care[0]}}">{{care[0]}}</option>
+            {% endfor %}
+        </select>
 
         <input type="submit" name="function" value="update">
     </form>

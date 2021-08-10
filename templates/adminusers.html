@@ -41,7 +41,6 @@
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Location</th>
-                <th>Picture</th>
                 <th>ACTIONS</th>
             </tr>
         <tbody>
@@ -52,7 +51,6 @@
                 <td>{{item[2]}}</td>
                 <td>{{item[3]}}</td>
                 <td>{{item[4]}}</td>
-                <td>{{item[5]}}</td>
                <td>
                     <form action="/admins/users/update_user" method="post">
                         <input type="hidden" name="id" value="{{item[0]}}">

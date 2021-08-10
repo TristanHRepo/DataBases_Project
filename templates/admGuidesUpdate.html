@@ -17,10 +17,21 @@
         <input type="text" id="desc" name="desc" value="{{data[0][3]}}" required>
 
         <label for="plantid">Plant ID:</label>
-        <input type="text" id="plantid" name="plantid" value="{{data[0][4]}}">
+        <select id="plantID" name="plantID">
+            <option value="{{data[0][4]}}" selected style="background-color: yellow">{{data[0][4]}}</option>
+            <option value="Null">None</option>
+            {% for plant in plants %}
+            <option value="{{plant[0]}}">{{plant[1]}}</option>
+            {% endfor %}
+        </select>
 
         <label for="userid">User ID:</label>
-        <input type="text" id="userid" name="userid" value="{{data[0][5]}}" required>
+        <select id="userid" name="userid" required>
+            <option value="{{data[0][5]}}" selected style="background-color: yellow">{{data[0][5]}}</option>
+            {% for user in users %}
+            <option value="{{user[0]}}">{{user[1]}} {{user[2]}}</option>
+            {% endfor %}
+        </select>
 
         <input type="submit" name="function" value="update">
     </form>
